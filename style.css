@@ -1,0 +1,319 @@
+/* === Variabel Utama === */
+:root {
+  --vir-bg: #f8fafc;
+  --vir-text: #1f2937;
+  --vir-card: #ffffff;
+  --vir-primary: #22c55e;
+  --vir-font: 'Segoe UI', sans-serif;
+
+  --vir-font-sm: 0.9rem;
+  --vir-font-base: 1rem;
+  --vir-font-lg: 1.2rem;
+  --vir-font-xl: 1.5rem;
+}
+
+/* === Reset & Body === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--vir-font);
+  background-color: var(--vir-bg);
+  color: var(--vir-text);
+  line-height: 1.6;
+  font-size: var(--vir-font-base);
+  overflow-x: hidden;
+}
+
+/* ======================================================
+   === NAVIGASI ATAS ===
+====================================================== */
+.vir-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background-color: var(--vir-card);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  z-index: 1000;
+}
+
+.vir-nav-left {
+  font-size: var(--vir-font-lg);
+  font-weight: bold;
+  color: var(--vir-text);
+  white-space: nowrap;
+}
+
+.vir-menu-icon {
+  font-size: var(--vir-font-xl);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--vir-text);
+}
+
+/* ======================================================
+   === SIDEBAR MENU ===
+====================================================== */
+.vir-sidebar {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 240px;
+  height: 100%;
+  background-color: var(--vir-card);
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem 1rem;
+  transition: left 0.4s ease;
+  z-index: 2000;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.vir-sidebar.show {
+  left: 0;
+}
+
+.vir-sidebar-header {
+  text-align: center;
+}
+
+.vir-sidebar-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-bottom: 0.5rem;
+}
+
+.vir-sidebar-title {
+  font-size: var(--vir-font-base);
+  font-weight: bold;
+  color: var(--vir-text);
+}
+
+/* === Tombol Tutup === */
+.vir-close-btn {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  font-size: var(--vir-font-xl);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--vir-text);
+}
+
+/* === Menu Sidebar === */
+.vir-sidebar-menu {
+  list-style: none;
+  margin-top: 2rem;
+}
+
+.vir-sidebar-menu li {
+  margin-bottom: 1rem;
+}
+
+.vir-sidebar-menu a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--vir-text);
+  font-weight: 500;
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.vir-sidebar-menu a:hover {
+  background-color: #e2e8f0;
+}
+
+.vir-icon {
+  margin-right: 0.5rem;
+  font-size: var(--vir-font-lg);
+}
+
+/* === Footer Sidebar (Tanggal & Jam) === */
+.vir-sidebar-footer {
+  font-size: var(--vir-font-sm);
+  color: #6b7280;
+  text-align: center;
+  margin-top: auto;
+}
+
+/* ======================================================
+   === IKLAN ATAS (PROMO BANNER) ===
+====================================================== */
+.vir-promo-banner {
+  margin: 1rem auto;
+  padding: 1rem;
+  text-align: center;
+  background-color: #fef9c3;
+  color: #78350f;
+  border: 1px solid #fcd34d;
+  border-radius: 10px;
+  max-width: 600px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  font-size: var(--vir-font-sm);
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.vir-promo-banner:active {
+  transform: scale(0.98);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+.vir-promo-banner a {
+  color: #d97706;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+/* ======================================================
+   === TOMBOL MASUK (HERO) ===
+====================================================== */
+.vir-hero {
+  margin: 2rem auto;
+  text-align: center;
+}
+
+.vir-hero button {
+  background-color: var(--vir-primary);
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: var(--vir-font-base);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.vir-hero button:hover {
+  background-color: #16a34a;
+  transform: scale(1.05);
+}
+
+/* ======================================================
+   === ARTIKEL (KONTEN UTAMA) ===
+====================================================== */
+.vir-main-content {
+  padding: 1rem;
+}
+
+.vir-article-card {
+  background-color: var(--vir-card);
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  padding: 1.5rem;
+  max-width: 600px;
+  margin: 1.5rem auto;
+  animation: slideUp 0.6s ease;
+}
+
+.vir-article-card h3 {
+  margin-bottom: 0.75rem;
+  font-size: var(--vir-font-lg);
+}
+
+.vir-article-card p {
+  font-size: var(--vir-font-sm);
+  color: var(--vir-text);
+}
+
+/* ======================================================
+   === IKLAN TENGAH (SPONSOR) ===
+====================================================== */
+.vir-ad-section {
+  background-color: #ecfdf5;
+  border-left: 6px solid var(--vir-primary);
+  padding: 1rem 1.25rem;
+  margin: 1.5rem auto;
+  max-width: 600px;
+  border-radius: 10px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
+  font-size: var(--vir-font-sm);
+  color: #065f46;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.vir-ad-section:active {
+  transform: scale(0.98);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+.vir-ad-section a {
+  color: #047857;
+  text-decoration: underline;
+}
+
+/* ======================================================
+   === FOOTER UMUM ===
+====================================================== */
+.vir-footer {
+  background-color: var(--vir-card);
+  text-align: center;
+  padding: 1rem;
+  font-size: var(--vir-font-sm);
+  color: #6b7280;
+  margin-top: 3rem;
+  box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* ======================================================
+   === ANIMASI KEYFRAMES ===
+====================================================== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ======================================================
+   === RESPONSIF: MOBILE FRIENDLY ===
+====================================================== */
+@media (max-width: 600px) {
+  .vir-navbar {
+    padding: 0.75rem;
+  }
+
+  .vir-hero button {
+    font-size: 0.95rem;
+    padding: 0.6rem 1.2rem;
+  }
+
+  .vir-promo-banner {
+    font-size: 0.9rem;
+    padding: 0.75rem;
+  }
+
+  .vir-article-card,
+  .vir-ad-section {
+    margin: 1rem 1rem;
+  }
+}

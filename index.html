@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Virnophas Official</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- =====================================================
+       === NAVIGASI ATAS ===
+  ===================================================== -->
+  <nav class="vir-navbar">
+    <div class="vir-nav-left">Virnophas Official</div>
+    <div class="vir-nav-right">
+      <button id="vir-menuToggle" class="vir-menu-icon" aria-label="Buka Menu">&#9776;</button>
+    </div>
+  </nav>
+
+  <!-- =====================================================
+       === SIDEBAR MENU ===
+  ===================================================== -->
+  <aside id="vir-sidebar" class="vir-sidebar">
+    <!-- === Sidebar Header: Profil === -->
+    <div class="vir-sidebar-header">
+      <img src="profil.jpg" alt="Profil" class="vir-sidebar-avatar" />
+      <h4 class="vir-sidebar-title">Virnophas Official</h4>
+    </div>
+
+    <!-- === Tombol Tutup Sidebar === -->
+    <button id="vir-closeSidebar" class="vir-close-btn" aria-label="Tutup Menu">&times;</button>
+
+    <!-- === Menu List dengan Ikon === -->
+    <ul class="vir-sidebar-menu">
+      <li><a href="#"><span class="vir-icon">🏠</span> Beranda</a></li>
+      <li><a href="#"><span class="vir-icon">ℹ️</span> Tentang</a></li>
+      <li><a href="#"><span class="vir-icon">📞</span> Kontak</a></li>
+    </ul>
+
+    <!-- === Footer Sidebar: Tanggal & Jam === -->
+    <div class="vir-sidebar-footer">
+      <p id="vir-dateTime"></p>
+    </div>
+  </aside>
+
+  <!-- =====================================================
+       === MOCKUP 1: IKLAN ATAS ===
+  ===================================================== -->
+  <div class="vir-promo-banner">
+    📢 <strong>Promo Spesial Bulan Ini!</strong> Dapatkan diskon hingga 50%. <a href="#">Pelajari selengkapnya</a>.
+  </div>
+
+  <!-- =====================================================
+       === TOMBOL MASUK ===
+  ===================================================== -->
+  <header class="vir-hero">
+    <button id="vir-openBtn">Masuk</button>
+  </header>
+
+  <!-- =====================================================
+       === KONTEN UTAMA: ARTIKEL & IKLAN ===
+  ===================================================== -->
+<main id="vir-mainContent" class="vir-main-content">
+    <!-- === Artikel 1 === -->
+    <section class="vir-article-card">
+      <h3>Judul Artikel Pertama</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae lorem justo. Nulla facilisi.</p>
+    </section>
+
+    <!-- === Iklan Tengah === -->
+    <section class="vir-ad-section">
+      🔔 <strong>Iklan Sponsor:</strong> Kunjungi <a href="#">Website Sponsor</a> untuk penawaran eksklusif hari ini!
+    </section>
+
+    <!-- === Artikel 2 === -->
+    <section class="vir-article-card">
+      <h3>Judul Artikel Kedua</h3>
+      <p>Donec vel erat in nunc aliquet tincidunt. Fusce varius, tortor sed fringilla iaculis, urna est fermentum nulla.</p>
+    </section>
+  </main>
+
+  <!-- =====================================================
+       === FOOTER UTAMA ===
+  ===================================================== -->
+  <footer class="vir-footer">
+    <p>&copy; 2025 Virnophas Official. Semua Hak Dilindungi.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
