@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="description" content="Virnophas Official - Situs Resmi dengan informasi, fitur, dan konten berkualitas." />
+  <meta name="keywords" content="Virnophas, Info, Teknologi, Artikel, Fitur, Testimoni" />
+  <meta name="author" content="Virnophas Team" />
+  <meta name="theme-color" content="#ffffff" />
+  <title>Virnophas Official</title>
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Material Symbols Rounded -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" rel="stylesheet" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="vir-nav">
+    <div class="vir-nav-title">Virnophas Official</div>
+    <div class="vir-nav-icons">
+      <button class="vir-btn" id="vir-theme-toggle">
+        <span class="material-symbols-rounded">dark_mode</span>
+      </button>
+      <button class="vir-btn" id="vir-sidebar-toggle">
+        <span class="material-symbols-rounded">menu</span>
+      </button>
+    </div>
+  </header>
+
+  <aside class="vir-sidebar" id="vir-sidebar">
+    <div class="vir-sidebar-header">
+      <h2>Virnophas</h2>
+      <button class="vir-btn" id="vir-close-sidebar">
+        <span class="material-symbols-rounded">close</span>
+      </button>
+    </div>
+    <nav class="vir-sidebar-nav">
+      <a href="#">Beranda</a>
+      <a href="#">Tentang</a>
+      <a href="#">Fitur</a>
+      <a href="#">Kontak</a>
+    </nav>
+  </aside>
+
+  <main class="vir-main">
+    <section class="vir-ad vir-ad-top" onclick="window.open('#', '_blank')">
+      <small class="vir-ad-label">IKLAN</small>
+      <h3>Iklan Atas</h3>
+      <p>Lorem ipsum dolor sit amet, iklan ini bisa diklik.</p>
+    </section>
+
+    <section class="vir-hero">
+      <h1>Selamat Datang</h1>
+      <p>Ini adalah deskripsi singkat tentang Virnophas Official.</p>
+      <button class="vir-btn vir-btn-primary">Masuk Sekarang</button>
+    </section>
+
+    <section class="vir-ad" onclick="window.open('#', '_blank')">
+      <small class="vir-ad-label">IKLAN</small>
+      <h3>Iklan Sponsor Tengah</h3>
+      <p>Lorem ipsum dolor sit amet, ini juga iklan yang bisa diklik.</p>
+    </section>
+
+    <section class="vir-card">
+      <h2 class="vir-section-title"><span class="material-symbols-rounded">article</span> Artikel Pertama</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </section>
+
+    <section class="vir-card">
+      <h2 class="vir-section-title"><span class="material-symbols-rounded">article</span> Artikel Kedua</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </section>
+
+    <section class="vir-card">
+      <h2 class="vir-section-title"><span class="material-symbols-rounded">star</span> Fitur Unggulan</h2>
+      <ul class="vir-feature-list">
+        <li class="vir-feature-item">Fitur 1 - Deskripsi singkat</li>
+        <li class="vir-feature-item">Fitur 2 - Deskripsi lainnya</li>
+        <li class="vir-feature-item">Fitur 3 - Masih dummy</li>
+      </ul>
+    </section>
+
+    <section class="vir-card">
+      <h2 class="vir-section-title"><span class="material-symbols-rounded">thumb_up</span> Testimoni Pengguna</h2>
+      <div class="vir-testimonials">
+        <blockquote class="vir-testimonial">"Situs ini luar biasa!" - Pengguna A</blockquote>
+        <blockquote class="vir-testimonial">"Sangat membantu dan cepat!" - Pengguna B</blockquote>
+      </div>
+    </section>
+  </main>
+
+  <footer class="vir-footer">
+    <p>&copy; 2025 Virnophas Official. All rights reserved.</p>
+    <p id="vir-clock"></p>
+  </footer>
+
+  <!-- JS -->
+  <script src="js/script.js"></script>
+</body>
+</html>
