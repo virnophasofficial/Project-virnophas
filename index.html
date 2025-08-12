@@ -1,107 +1,514 @@
 <!DOCTYPE html>
-<html lang="id">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="description" content="Virnophas Official - Situs Resmi dengan informasi, fitur, dan konten berkualitas." />
-  <meta name="keywords" content="Virnophas, Info, Teknologi, Artikel, Fitur, Testimoni" />
-  <meta name="author" content="Virnophas Team" />
-  <meta name="theme-color" content="#ffffff" />
-  <title>Virnophas Official</title>
+<html lang="id" vir-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Virnophas Official - Sumber konfigurasi (config) PUBG Mobile yang aman dan gratis. Tingkatkan performa, stabilkan FPS, dan optimalkan grafik untuk pengalaman bermain bebas lag." />
+    <meta name="keywords" content="Virnophas Official, config PUBG Mobile, config pubg, pubg mobile anti lag, pubg fps, pubg mobile low end device, config 32 bit, config 64 bit, pubg mobile gratis, virnophas" />
+    <meta name="author" content="Malgath Cargeiros" />
+    <link rel="icon" href="assets/images/images.png" type="image/png" />
+    <title>Virnophas Official</title>
 
-  <!-- Google Fonts: Inter -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+    <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Plus+Jakarta+Sans:wght@400;600&display=swap" rel="stylesheet" />
 
-  <!-- Material Symbols Rounded -->
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" rel="stylesheet" />
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="css/style.css" />
-</head>
-<body>
-  <header class="vir-nav">
-    <div class="vir-nav-title">Virnophas Official</div>
-    <div class="vir-nav-icons">
-      <button class="vir-btn" id="vir-theme-toggle">
-        <span class="material-symbols-rounded">dark_mode</span>
-      </button>
-      <button class="vir-btn" id="vir-sidebar-toggle">
-        <span class="material-symbols-rounded">menu</span>
-      </button>
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+
+<!-- ========== HEADER / NAVBAR ========== --!>
+<header class="vir-navbar">
+  <div class="vir-nav-left">
+    <h1 class="vir-judul">Virnophas Official</h1>
+  </div>
+  <div class="vir-nav-actions">
+    <button id="vir-toggle-theme" aria-label="Toggle Theme">
+      <i id="vir-theme-icon" data-lucide="sun"></i>
+    </button>
+
+    <button id="vir-toggle-menu" aria-label="Toggle Menu Sidebar">
+      <i id="vir-menu-icon" data-lucide="menu"></i>
+    </button>
+  </div>
+</header>
+
+<nav id="vir-sidebar" class="vir-sidebar" aria-label="Navigasi Sidebar">
+    <div class="sidebar-header">
+        <button id="vir-close-sidebar" aria-label="Tutup Sidebar" class="close-btn">
+            <i id="vir-close-icon" data-lucide="x"></i>
+        </button>
+        
+        <div class="vir-profil-avatar">
+            <img src="assets/images/profil.jpg" alt="Avatar">
+        </div>
+        
+        <h3>Virnophas Official</h3>
+        
+        <p class="profile-description">
+    <span class="short-text">Solusi optimalisasi game...</span>
+    <span class="full-text">Solusi optimalisasi performa game PUBG Mobile yang aman, gratis, dan terpercaya untuk semua perangkat.</span>
+</p>
+    <button class="toggle-description-btn" aria-expanded="false">
+        <i data-lucide="chevron-down"></i>
+    </button>
+</p>
+
+
+        <div class="vir-social-icons">
+    <a href="https://youtube.com/@virnophasgaming?si=h4MNpgg7EzVhf-QV" class="youtube"><i data-lucide="youtube"></i></a>
+    <a href="https://t.me/VirnophasOriginal" class="boxes"><i data-lucide="boxes"></i></a>
+    <a href="https://saweria.co/Virnophas" class="hand-coins"><i data-lucide="hand-coins"></i></a>
+</div>
+
     </div>
-  </header>
-
-  <aside class="vir-sidebar" id="vir-sidebar">
-    <div class="vir-sidebar-header">
-      <h2>Virnophas</h2>
-      <button class="vir-btn" id="vir-close-sidebar">
-        <span class="material-symbols-rounded">close</span>
-      </button>
+    
+    <ul class="vir-sidebar-menu">
+        <li><a href="index.html"><i data-lucide="home"></i> <span>Beranda</span></a></li>
+        <li><a href="index.html"><i data-lucide="file-text"></i> <span>Belum Ada</span></a></li>
+        <li><a href="#"><i data-lucide="info"></i> <span>Belum Ada</span></a></li>
+        <li><a href="index.html"><i data-lucide="contact"></i> <span>Belum Ada</span></a></li>
+    </ul>
+    <!-- ========== FOOTER & JAM, TANGGAL SIDEBAR MENU ========== -->
+<div class="vir-sidebar-footer">
+    <div class="vir-datetime-container">
+        <div id="vir-time"></div>
+        <div id="vir-date"></div>
     </div>
-    <nav class="vir-sidebar-nav">
-      <a href="#">Beranda</a>
-      <a href="#">Tentang</a>
-      <a href="#">Fitur</a>
-      <a href="#">Kontak</a>
-    </nav>
-  </aside>
+</div>
 
-  <main class="vir-main">
-    <section class="vir-ad vir-ad-top" onclick="window.open('#', '_blank')">
-      <small class="vir-ad-label">IKLAN</small>
-      <h3>Iklan Atas</h3>
-      <p>Lorem ipsum dolor sit amet, iklan ini bisa diklik.</p>
-    </section>
 
-    <section class="vir-hero">
-      <h1>Selamat Datang</h1>
-      <p>Ini adalah deskripsi singkat tentang Virnophas Official.</p>
-      <button class="vir-btn vir-btn-primary">Masuk Sekarang</button>
-    </section>
 
-    <section class="vir-ad" onclick="window.open('#', '_blank')">
-      <small class="vir-ad-label">IKLAN</small>
-      <h3>Iklan Sponsor Tengah</h3>
-      <p>Lorem ipsum dolor sit amet, ini juga iklan yang bisa diklik.</p>
-    </section>
+</nav>
 
-    <section class="vir-card">
-      <h2 class="vir-section-title"><span class="material-symbols-rounded">article</span> Artikel Pertama</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-    </section>
+<!-- ========== HERO LANDING PAGE ========== --!>
+<section class="vir-hero-landing-page">
+    <img src="assets/images/background-hero.jpg" alt="Background Virnophas Official" class="vir-hero-background-image">
+    <div class="vir-hero-landing-content vir-neumorphism-card">
+        <h2 class="vir-hero-welcome">Selamat Datang di Virnophas Official</h2>
+        <p class="vir-hero-deskripsi-singkat">
+    Dapatkan pengalaman bermain PUBG Mobile yang lebih lancar dan stabil. Kami menyediakan konfigurasi (config) aman dan gratis untuk mengatasi lag, drop FPS, dan masalah performa di perangkat Anda.
+</p>
+        <div class="vir-hero-buttons">
+            <a href="https://t.me/VirnophasOriginal" class="vir-btn-utama vir-btn-telegram">Gabung di Telegram</a>
+            <a href="assets/images/coming-soon.jpeg" class="vir-btn-utama vir-btn-download">Halaman Download</a>
+        </div>
+    </div>
+</section>
 
-    <section class="vir-card">
-      <h2 class="vir-section-title"><span class="material-symbols-rounded">article</span> Artikel Kedua</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-    </section>
+<!-- ========== TIM KAMI ========== -->
+<section class="vir-kartu-tim">
+    <div class="vir-container">
+        <h2 class="vir-team-title-2">Tim Pengembang Kami</h2><p class="vir-team-slogan-2">
+    Tim yang mewujudkan visi dan misi kami.
+</p>
 
-    <section class="vir-card">
-      <h2 class="vir-section-title"><span class="material-symbols-rounded">star</span> Fitur Unggulan</h2>
-      <ul class="vir-feature-list">
-        <li class="vir-feature-item">Fitur 1 - Deskripsi singkat</li>
-        <li class="vir-feature-item">Fitur 2 - Deskripsi lainnya</li>
-        <li class="vir-feature-item">Fitur 3 - Masih dummy</li>
-      </ul>
-    </section>
+        <div class="vir-team-grid-2">
 
-    <section class="vir-card">
-      <h2 class="vir-section-title"><span class="material-symbols-rounded">thumb_up</span> Testimoni Pengguna</h2>
-      <div class="vir-testimonials">
-        <blockquote class="vir-testimonial">"Situs ini luar biasa!" - Pengguna A</blockquote>
-        <blockquote class="vir-testimonial">"Sangat membantu dan cepat!" - Pengguna B</blockquote>
-      </div>
-    </section>
-  </main>
+            <div class="vir-team-profile-card">
+                <img src="assets/images/photo-owner.jpg" alt="Foto Profil Malgath Cargeiros" class="vir-profile-photo">
+                <h3 class="vir-profile-name">Malgath Cargeiros</h3>
+<p class="vir-profile-role">Founder & Lead Developer</p>
+<p class="vir-profile-description">
+Malgath adalah otak di balik setiap config yang dibagikan. Berbekal pengalaman pribadi dan eksperimen, ia memimpin Virnophas Official dengan prinsip transparansi dan profesionalisme, memastikan setiap konten yang dirilis aman, orisinal, dan etis.
+</p>
+                <div class="vir-profile-social-links">
+                    <a href="https://m.facebook.com/61578259913695/" class="vir-social-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-facebook">
+                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                        </svg>
+                    </a>
+                    <a href="https://x.com/Cargeiros" class="vir-social-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-twitter">
+                            <path d="M22 4s-.7 2.1-2 3.4c-2.8 1.8-6.9 2.5-10.4 2.3 2.2 2.3 2.9 5.8 2 8.2l-1 3c-4.4-1.2-8.4-5.3-10-10C4 5.3 6 3 8 3c2.2 0 4 1 5 3 2.6 0 5-1 7-3 1.2.6 2.1 1.5 2.5 2.8z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
 
-  <footer class="vir-footer">
-    <p>&copy; 2025 Virnophas Official. All rights reserved.</p>
-    <p id="vir-clock"></p>
-  </footer>
+            <div class="vir-team-profile-card">
+                <img src="assets/images/photo-web-developer.jpg" alt="Foto Profil Fikri Muharrikul Ihsan" class="vir-profile-photo">
+                <h3 class="vir-profile-name">Fikri Muharrikul Ihsan</h3>
+<p class="vir-profile-role">Web Developer</p>
+<p class="vir-profile-description">
+Bertanggung jawab atas arsitektur digital Virnophas Official, Fikri memastikan website ini tidak hanya modern dan responsif, tetapi juga optimal dari sisi performa dan pengalaman pengguna. Ia adalah orang di balik kode yang membuat visi kami menjadi kenyataan yang fungsional.
+</p>
+                <div class="vir-profile-social-links">
+                    <a href="https://m.facebook.com/Fikri12091999/" class="vir-social-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-facebook">
+                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="vir-social-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-twitter">
+                            <path d="M22 4s-.7 2.1-2 3.4c-2.8 1.8-6.9 2.5-10.4 2.3 2.2 2.3 2.9 5.8 2 8.2l-1 3c-4.4-1.2-8.4-5.3-10-10C4 5.3 6 3 8 3c2.2 0 4 1 5 3 2.6 0 5-1 7-3 1.2.6 2.1 1.5 2.5 2.8z"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="vir-social-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-instagram">
+                            <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                            <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section>
 
-  <!-- JS -->
-  <script src="js/script.js"></script>
-</body>
+<!-- ========== IKLAN ========== -->
+<section class="vir-sponsor-section">
+    <div class="vir-container">
+        <h2 class="vir-sponsor-title">Didukung oleh Sponsor</h2>
+        <div class="vir-sponsor-marquee">
+            <div class="vir-marquee-content">
+                <img src="assets/images/logo.png" alt="Sponsor Logo 1" class="vir-sponsor-logo">
+                <img src="assets/images/logo-1.png" alt="Sponsor Logo 2" class="vir-sponsor-logo">
+                <img src="https://logoipsum.com/artwork/386" alt="Sponsor Logo 3" class="vir-sponsor-logo">
+                <img src="https://logoipsum.com/artwork/385" alt="Sponsor Logo 4" class="vir-sponsor-logo">
+                <img src="https://cdn.discordapp.com/attachments/1118181655848800266/1209307779768375326/image.png?ex=65e5b306&is=65d33e06&hm=f3b1456a000632598380e227a69edb6b8032c1b18147d341935e40e24177d704&" alt="Sponsor Logo 5" class="vir-sponsor-logo">
+                <img src="https://cdn.discordapp.com/attachments/1118181655848800266/1209307779768375326/image.png?ex=65e5b306&is=65d33e06&hm=f3b1456a000632598380e227a69edb6b8032c1b18147d341935e40e24177d704&" alt="Sponsor Logo 6" class="vir-sponsor-logo">
+                <img src="https://cdn.discordapp.com/attachments/1118181655848800266/1209307779768375326/image.png?ex=65e5b306&is=65d33e06&hm=f3b1456a000632598380e227a69edb6b8032c1b18147d341935e40e24177d704&" alt="Sponsor Logo 1" class="vir-sponsor-logo">
+                <img src="https://cdn.discordapp.com/attachments/1118181655848800266/1209307779768375326/image.png?ex=65e5b306&is=65d33e06&hm=f3b1456a000632598380e227a69edb6b8032c1b18147d341935e40e24177d704&" alt="Sponsor Logo 2" class="vir-sponsor-logo">
+                <img src="https://cdn.discordapp.com/attachments/1118181655848800266/1209307779768375326/image.png?ex=65e5b306&is=65d33e06&hm=f3b1456a000632598380e227a69edb6b8032c1b18147d341935e40e24177d704&" alt="Sponsor Logo 3" class="vir-sponsor-logo">
+                <img src="https://cdn.discordapp.com/attachments/1118181655848800266/1209307779768375326/image.png?ex=65e5b306&is=65d33e06&hm=f3b1456a000632598380e227a69edb6b8032c1b18147d341935e40e24177d704&" alt="Sponsor Logo 4" class="vir-sponsor-logo">
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ========== LEGAL INFORMASI ========== -->
+<section class="vir-legal-section">
+    <div class="vir-container">
+<div class="vir-legal-main-card">
+    <h2 class="vir-legal-main-title">Ketentuan & Kebijakan Resmi</h2>
+    <p class="vir-legal-subtitle">Baca dokumen legal kami untuk memahami hak dan kewajiban Anda sebagai pengguna.</p>
+
+    <div class="vir-tabs-wrapper">
+        <div class="vir-tabs-buttons">
+            <button class="vir-tab-button active" data-target="disclaimer">
+                <span></span> Disclaimer
+            </button>
+            <button class="vir-tab-button" data-target="privacy">
+                <span></span> Privacy Policy
+            </button>
+            <button class="vir-tab-button" data-target="terms">
+                <span></span> Terms of Service
+            </button>
+            <button class="vir-tab-button" data-target="antiplagiarisme">
+                <span></span> Kebijakan Anti-Plagiarisme
+            </button>
+            <button class="vir-tab-button" data-target="hakcipta">
+                <span></span> Aturan Hak Cipta
+            </button>
+            <button class="vir-tab-button" data-target="about">
+                <span></span> About Us
+            </button>
+        </div>
+        
+        <div class="vir-tabs-content">
+            <div id="disclaimer" class="vir-tab-content active">
+                <h3 class="vir-legal-title">Disclaimer Resmi Virnophas Official</h3>
+                <p>
+                    Selamat datang di Virnophas Official. Dokumen ini adalah penjelasan resmi kami mengenai tujuan dan batasan layanan yang kami sediakan. Dengan mengakses dan menggunakan konten dari website ini, Anda dianggap telah memahami dan menyetujui seluruh isi disclaimer di bawah ini.
+                </p>
+                <h4 class="vir-legal-title">1. Tujuan Kami</h4>
+                <div class="vir-artikel-alert vir-artikel-informasi">
+                    <div class="vir-artikel-alert__icon">
+                        <i data-lucide="info"></i>
+                    </div>
+                    <div class="vir-artikel-alert__content">
+                        <strong>Informasi:</strong> Semua konten di website ini bersifat edukatif dan bertujuan untuk berbagi informasi seputar optimasi game PUBG Mobile.
+                    </div>
+                </div>
+                <p>
+                    <strong>Virnophas Official</strong> menyediakan konfigurasi (config) game yang dibuat secara mandiri. Tujuan utama kami adalah untuk:
+                </p>
+                <ul>
+                    <li>Membantu pemain dengan perangkat spesifikasi rendah mendapatkan pengalaman bermain yang lebih lancar dan stabil.</li>
+                    <li>Mengoptimalkan performa gim, mengurangi lag, framedrop, dan masalah suara.</li>
+                    <li>Membangun komunitas yang suportif dan berfokus pada permainan yang adil.</li>
+                </ul>
+                <h4 class="vir-legal-title">2. Komitmen Anti-Cheat (Bukan Cheat/Mod Ilegal)</h4>
+                <p>
+                    Kami menegaskan bahwa Virnophas Official <strong>tidak pernah dan tidak akan pernah</strong> membagikan konten yang melanggar aturan resmi PUBG Mobile.
+                </p>
+                <div class="vir-artikel-alert vir-artikel-bahaya">
+                    <div class="vir-artikel-alert__icon">
+                        <i data-lucide="alert-octagon"></i>
+                    </div>
+                    <div class="vir-artikel-alert__content">
+                        <strong>Peringatan Penting:</strong> Kami tidak menyediakan cheat, wallhack, aimbot, atau mod ilegal lainnya. Semua file kami dibuat untuk optimasi performa legal.
+                    </div>
+                </div>
+                <p>
+                    Semua file config yang kami sediakan hanya mengubah pengaturan visual dan performa di sisi klien (client-side). Hal ini tidak memengaruhi sistem keamanan gim, mekanisme permainan, atau server. Kami berkomitmen penuh untuk mendukung permainan yang bersih dan adil.
+                </p>
+                <h4 class="vir-legal-title">3. Batas Tanggung Jawab & Risiko Penggunaan</h4>
+                <div class="vir-artikel-alert vir-artikel-peringatan">
+                    <div class="vir-artikel-alert__icon">
+                        <i data-lucide="alert-triangle"></i>
+                    </div>
+                    <div class="vir-artikel-alert__content">
+                        <strong>Peringatan:</strong> Penggunaan file sepenuhnya menjadi tanggung jawab Anda sebagai pengguna.
+                    </div>
+                </div>
+                <ul>
+                    <li><strong>Virnophas Official tidak membuat jaminan</strong> bahwa setiap file akan berfungsi 100% di semua perangkat atau versi gim. Hasil dapat bervariasi tergantung spesifikasi perangkat dan versi gim PUBG Mobile Anda.</li>
+                    <li>Kami <strong>tidak bertanggung jawab</strong> atas segala kerusakan sistem, masalah teknis, atau risiko banned akibat kesalahan instalasi atau penggunaan yang tidak sesuai dengan panduan yang kami berikan.</li>
+                    <li>Kami sangat menyarankan Anda untuk <strong>selalu mencadangkan data</strong> penting sebelum menggunakan file apa pun.</li>
+                </ul>
+                <h4 class="vir-legal-title">4. Kepemilikan & Afiliasi</h4>
+                <div class="vir-artikel-alert vir-artikel-informasi">
+                    <div class="vir-artikel-alert__icon">
+                        <i data-lucide="info"></i>
+                    </div>
+                    <div class="vir-artikel-alert__content">
+                        <strong>Informasi:</strong> Kami adalah komunitas independen dan tidak terafiliasi secara resmi dengan PUBG Mobile, Krafton, atau Tencent Games.
+                    </div>
+                </div>
+                <ul>
+                    <li>Semua nama dan merek dagang (termasuk PUBG Mobile, Krafton, Tencent) yang disebutkan di sini adalah milik pemegang hak cipta masing-masing dan digunakan <strong>hanya untuk tujuan referensi dan identifikasi</strong>.</li>
+                    <li>Semua konten di website ini (file, panduan, teks) adalah <strong>karya orisinal</strong> dari tim Virnophas Official.</li>
+                </ul>
+                <p>
+                    Kami terbuka untuk komunikasi dan diskusi dengan pihak resmi jika ada penyesuaian yang diperlukan atau potensi kolaborasi di masa depan.
+                </p>
+            </div>
+            
+            <div id="privacy" class="vir-tab-content">
+                <h3 class="vir-legal-title">Kebijakan Privasi Virnophas Official</h3>
+                <p>
+                    Kami di Virnophas Official sangat menghargai dan berkomitmen untuk melindungi privasi setiap pengunjung dan anggota. Kebijakan ini menjelaskan bagaimana kami mengelola data saat Anda berinteraksi dengan layanan kami, termasuk saat mengakses konten dan tautan di website ini. Dengan menggunakan layanan kami, Anda dianggap menyetujui kebijakan privasi ini.
+                </p>
+                <h4 class="vir-legal-title">1. Informasi yang Kami Kumpulkan</h4>
+                <div class="vir-artikel-alert vir-artikel-informasi">
+                    <div class="vir-artikel-alert__icon">
+                        <i data-lucide="info"></i>
+                    </div>
+                    <div class="vir-artikel-alert__content">
+                        <strong>Informasi:</strong> Kami tidak pernah secara langsung mengumpulkan data pribadi seperti nama, alamat email, atau nomor telepon.
+                    </div>
+                </div>
+                <p>
+                    Saat Anda menggunakan website kami, beberapa data non-pribadi dapat secara otomatis dikumpulkan oleh <strong>layanan pihak ketiga</strong> yang kami gunakan (seperti shortlink atau layanan hosting file). Data ini umumnya mencakup:
+                </p>
+                <ul>
+                    <li>Alamat IP (Internet Protocol)</li>
+                    <li>Jenis perangkat dan peramban web (browser)</li>
+                    <li>Waktu dan tanggal akses</li>
+                    <li>Statistik klik dan unduhan</li>
+                </ul>
+                <p>
+                    Data ini bersifat anonim dan tidak digunakan untuk mengidentifikasi Anda secara pribadi.
+                </p>
+                <h4 class="vir-legal-title">2. Penggunaan Data</h4>
+                <p>
+                    Data non-pribadi yang dikumpulkan bertujuan untuk:
+                </p>
+                <ul>
+                    <li>Menganalisis performa website dan konten kami.</li>
+                    <li>Mengoptimalkan layanan dan pengalaman pengguna.</li>
+                    <li>Melindungi website dari aktivitas mencurigakan atau serangan bot.</li>
+                    <li>Membantu kami memahami preferensi komunitas secara umum.</li>
+                </ul>
+                <h4 class="vir-legal-title">3. Layanan Pihak Ketiga</h4>
+                <div class="vir-artikel-alert vir-artikel-peringatan">
+                    <div class="vir-artikel-alert__icon">
+                        <i data-lucide="alert-triangle"></i>
+                    </div>
+                    <div class="vir-artikel-alert__content">
+                        <strong>Peringatan:</strong> Kebijakan privasi kami tidak berlaku untuk layanan pihak ketiga.
+                    </div>
+                </div>
+                <p>
+                    Kami menggunakan layanan pihak ketiga seperti <strong>shortlink monetisasi</strong> dan <strong>penyimpanan file eksternal</strong>. Layanan-layanan ini memiliki kebijakan privasinya masing-masing yang tidak berada di bawah kendali kami. Kami sangat menganjurkan Anda untuk membaca kebijakan privasi mereka sebelum menggunakan layanan tersebut.
+                </p>
+                <h4 class="vir-legal-title">4. Keamanan Data</h4>
+                <div class="vir-artikel-alert vir-artikel-sukses">
+                    <div class="vir-artikel-alert__icon">
+                        <i data-lucide="check-circle-2"></i>
+                    </div>
+                    <div class="vir-artikel-alert__content">
+                        <strong>Sukses:</strong> Semua file yang kami sediakan aman, legal, dan bebas dari malware atau virus berbahaya.
+                    </div>
+                </div>
+                <p>
+                    Meskipun kami tidak mengumpulkan data sensitif, kami berkomitmen penuh untuk menjaga integritas dan keamanan semua tautan dan file yang kami bagikan.
+                </p>
+                <h4 class="vir-legal-title">5. Perubahan Kebijakan</h4>
+                <p>
+                    Kebijakan privasi ini dapat diperbarui sewaktu-waktu. Kami akan menginformasikan perubahan dengan mempublikasikan versi terbaru di website ini. Dengan terus menggunakan layanan kami, Anda dianggap menyetujui kebijakan yang terbaru.
+                </p>
+            </div>
+
+            <div id="terms" class="vir-tab-content">
+                <h3 class="vir-legal-title">Ketentuan Layanan (Terms of Service)</h3>
+                <p>
+                    Selamat datang di Virnophas Official. Dengan mengakses dan menggunakan layanan kami, Anda secara otomatis menyetujui dan terikat dengan semua ketentuan yang dijelaskan di bawah ini. Jika Anda tidak setuju dengan salah satu bagian dari ketentuan ini, Anda tidak diperkenankan untuk menggunakan layanan kami.
+                </p>
+                <h4 class="vir-legal-title">1. Layanan dan Konten</h4>
+                <p>
+                    Layanan kami menyediakan akses gratis ke konfigurasi (config) PUBG Mobile untuk tujuan optimasi performa. Semua konten, termasuk file, artikel, dan panduan, adalah karya orisinal dari Virnophas Official.
+                </p>
+                <div class="vir-artikel-alert vir-artikel-sukses">
+                    <div class="vir-artikel-alert__icon">
+                        <i data-lucide="check-circle-2"></i>
+                    </div>
+                    <div class="vir-artikel-alert__content">
+                        <strong>Sukses:</strong> Semua konten kami legal, aman, dan dibuat untuk penggunaan yang adil, bukan untuk tujuan cheating atau hacking.
+                    </div>
+                </div>
+                <h4 class="vir-legal-title">2. Larangan Penggunaan</h4>
+                <p>
+                    Anda dilarang keras untuk:
+                </p>
+                <ul>
+                    <li>Menjual kembali, menyebarkan, atau memonetisasi konten yang kami bagikan tanpa izin tertulis dari kami.</li>
+                    <li>Mengklaim kepemilikan atas konten kami.</li>
+                    <li>Menggunakan layanan kami untuk tujuan ilegal, berbahaya, atau melanggar hukum yang berlaku.</li>
+                </ul>
+                <h4 class="vir-legal-title">3. Batasan Tanggung Jawab</h4>
+                <div class="vir-artikel-alert vir-artikel-peringatan">
+                    <div class="vir-artikel-alert__icon">
+                        <i data-lucide="alert-triangle"></i>
+                    </div>
+                    <div class="vir-artikel-alert__content">
+                        <strong>Peringatan:</strong> Kami tidak bertanggung jawab atas segala kerusakan atau masalah yang timbul dari penggunaan layanan kami.
+                    </div>
+                </div>
+                <p>
+                    Penggunaan semua file dan panduan di website ini sepenuhnya menjadi risiko Anda. Kami tidak menjamin bahwa layanan kami akan berjalan tanpa gangguan, aman, atau bebas dari kesalahan.
+                </p>
+                <h4 class="vir-legal-title">4. Monetisasi & Dukungan</h4>
+                <p>
+                    Layanan kami <b>gratis</b> untuk semua pengguna. Kami menggunakan <b>shortlink</b> untuk mendukung biaya operasional dan pengembangan layanan. Anda juga dapat memberikan donasi sukarela sebagai bentuk dukungan.
+                </p>
+                <div class="vir-artikel-alert vir-artikel-iklan">
+                    <div class="vir-artikel-alert__icon">
+                        <i data-lucide="megaphone"></i>
+                    </div>
+                    <div class="vir-artikel-alert__content">
+                        <strong>Dukungan:</strong> Dukungan Anda sangat berarti bagi kami untuk terus menyediakan layanan terbaik.
+                    </div>
+                </div>
+                <h4 class="vir-legal-title">5. Perubahan Ketentuan</h4>
+                <p>
+                    Kami berhak untuk mengubah ketentuan layanan ini kapan saja tanpa pemberitahuan. Dengan terus menggunakan layanan kami, Anda dianggap telah menyetujui perubahan tersebut. Versi terbaru dari ketentuan ini akan selalu tersedia di halaman ini.
+                </p>
+            </div>
+
+            <div id="antiplagiarisme" class="vir-tab-content">
+                <h4 class="vir-legal-title">Kebijakan Anti-Plagiarisme</h4>
+                <p>
+                    Kami di Virnophas Official sangat menjunjung tinggi hak cipta dan orisinalitas. Semua konten yang kami publikasikan, termasuk file konfigurasi, panduan, artikel, dan visual, adalah hasil karya orisinal dari tim kami. Kami berinvestasi waktu, tenaga, dan keahlian untuk menciptakan setiap konten yang Anda nikmati.
+                </p>
+                <div class="vir-artikel-alert vir-artikel-bahaya">
+                    <div class="vir-artikel-alert__icon">
+                        <i data-lucide="alert-octagon"></i>
+                    </div>
+                    <div class="vir-artikel-alert__content">
+                        <strong>Peringatan Tegas:</strong> Anda dilarang keras untuk "mencuri," mengklaim, menjual kembali, atau menyebarkan ulang konten kami tanpa izin.
+                    </div>
+                </div>
+                <p>
+                    Setiap tindakan yang melanggar hak cipta kami, seperti mengunggah ulang file atau panduan kami ke platform lain tanpa atribusi yang jelas dan izin, akan dianggap sebagai pelanggaran serius.
+                </p>
+                <p>
+                    Kami meminta Anda untuk menghargai kerja keras kami dan mendukung komunitas dengan cara yang positif. Jika Anda menemukan konten kami dicuri atau disalahgunakan, kami sangat berterima kasih jika Anda melaporkannya kepada kami melalui kanal resmi.
+                </p>
+            </div>
+
+            <div id="hakcipta" class="vir-tab-content"><h4 class="vir-legal-title">Kebijakan Terhadap Pengunggah Ulang Konten</h4>
+<p>
+    Virnophas Official secara tegas melarang praktik "comot" atau mengunggah ulang (re-upload) konten kami, baik sebagian maupun seluruhnya, tanpa izin. Konten yang dimaksud termasuk, tetapi tidak terbatas pada, file konfigurasi, aset visual, teks panduan, dan artikel.
+</p>
+
+<div class="vir-artikel-alert vir-artikel-bahaya">
+    <div class="vir-artikel-alert__icon">
+        <i data-lucide="alert-octagon"></i>
+    </div>
+    <div class="vir-artikel-alert__content">
+        <strong>Pelanggaran Serius:</strong> Tindakan mengklaim, mengubah, dan/atau menyebarkan ulang konten kami sebagai milik pribadi adalah pelanggaran hak cipta yang serius.
+    </div>
+</div>
+
+<p>
+    Tujuan kami menyediakan konten ini secara gratis adalah untuk membantu komunitas. Namun, kami tidak mengizinkan pihak lain untuk mengambil keuntungan dari karya kami atau menyebarkannya dengan cara yang dapat merusak nama baik Virnophas Official.
+</p>
+
+<p>
+    Bagi pihak yang melanggar kebijakan ini, kami berhak mengambil tindakan tegas. Kami akan melaporkan pelanggaran hak cipta kepada platform terkait (misalnya, YouTube, Telegram, atau penyedia hosting) dan, jika diperlukan, mengambil langkah hukum lainnya untuk melindungi karya orisinal kami.
+</p>
+
+
+                <div class="vir-artikel-alert vir-artikel-informasi">
+                    <div class="vir-artikel-alert__icon">
+                        <i data-lucide="info"></i>
+                    </div>
+                    <div class="vir-artikel-alert__content">
+                        <strong>Informasi:</strong> Kami adalah tim independen dan tidak terafiliasi dengan pihak pengembang game.
+                    </div>
+                </div>
+                <p>
+                    Kami menghargai kerja keras tim pengembang game, dan kami berharap Anda juga menghargai kerja keras tim kami. Penggunaan materi berhak cipta tanpa izin dapat mengakibatkan konsekuensi hukum.
+                </p>
+            </div>
+
+            <div id="about" class="vir-tab-content">
+                <h3 class="vir-legal-title">About Us</h3>
+                <p>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est, vitae.
+                </p>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ========== FOOTER ========== -->
+<footer class="vir-footer">
+  <span>Dibuat oleh</span>
+  <i data-lucide="heart"></i>
+  <a href="#" class="footer-link">Virnophas Official</a>
+  <span>— 2025</span>
+</footer>
+
+
+
+
+
+
+<!-- ========== ICON LIBRARY ========== -->
+<script src="https://unpkg.com/lucide@latest"></script>
+
+
+<!-- ========== SCRIPT UTAMA UNTUK TEMA & MENU ========== -->
+<script src="js/script.js"></script>
+
+<script>
+    lucide.createIcons();
+</script>
+
+  </body>
 </html>
