@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="id" vir-theme="light">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Masuk & Daftar | Virnophas Official</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+    
+    <!-- Lucide Icons (sebaiknya pakai yang ini untuk CSS) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lucide-static@latest/font/lucide.css" />
+
+    <!-- Tautkan ke file CSS -->
+    <link rel="stylesheet" href="css/style-1.css" />
+</head>
+<body class="vir-login-page">
+
+    <div class="vir-auth-container">
+        <button id="vir-theme-toggle" class="vir-theme-toggle vir-icon-btn" aria-label="Toggle dark mode">
+            <i data-lucide="moon"></i>
+        </button>
+
+        <div class="vir-auth-card">
+            <h2 class="vir-auth-title">Virnophas Official</h2>
+            
+            <p id="form-instruction" class="vir-form-instruction">Belum punya akun? Daftar untuk bergabung.</p>
+
+            <div class="vir-tab-switcher-wrapper">
+                <button id="login-tab" class="vir-tab-btn active">
+                    <span>Masuk</span>
+                </button>
+                <button id="signup-tab" class="vir-tab-btn">
+                    <span>Daftar</span>
+                </button>
+            </div>
+
+            <form id="vir-login-form" class="vir-form-container active">
+                <div id="login-message-box" class="vir-message-box"></div>
+                
+                <div class="vir-form-group">
+                    <label for="login-email">Email</label>
+                    <div class="vir-input-wrapper">
+                        <i data-lucide="mail" class="vir-input-icon"></i>
+                        <input type="email" id="login-email" class="vir-input" placeholder="Masukkan email Anda" required />
+                    </div>
+                    <div id="login-email-error" class="vir-input-error-msg"></div>
+                </div>
+                
+                <div class="vir-form-group">
+                    <label for="login-password">Kata Sandi</label>
+                    <div class="vir-input-wrapper">
+                        <i data-lucide="lock" class="vir-input-icon"></i>
+                        <input type="password" id="login-password" class="vir-input" placeholder="Masukkan kata sandi" required />
+                        <button type="button" class="vir-toggle-password" aria-label="Toggle password visibility">
+                            <i data-lucide="eye"></i>
+                        </button>
+                    </div>
+                    <div id="login-password-error" class="vir-input-error-msg"></div>
+                </div>
+                
+                <div class="vir-form-check">
+                    <a href="lupa-sandi.html" class="vir-link-style">Lupa Kata Sandi?</a>
+                </div>
+                
+                <button type="submit" id="login-submit-btn" class="vir-btn-submit">
+                    Masuk
+                </button>
+            </form>
+
+            <form id="vir-signup-form" class="vir-form-container">
+                <div id="signup-message-box" class="vir-message-box"></div>
+                
+                <div class="vir-form-group">
+                    <label for="full-name">Nama Lengkap</label>
+                    <div class="vir-input-wrapper">
+                        <i data-lucide="user" class="vir-input-icon"></i>
+                        <input type="text" id="full-name" class="vir-input" placeholder="Masukkan nama lengkap Anda" required />
+                    </div>
+                    <div id="full-name-error" class="vir-input-error-msg"></div>
+                </div>
+                
+                <div class="vir-form-group">
+                    <label for="username">Username</label>
+                    <div class="vir-input-wrapper">
+                        <i data-lucide="at-sign" class="vir-input-icon"></i>
+                        <input type="text" id="username" class="vir-input" placeholder="Cth: virnophas" required />
+                    </div>
+                    <div id="username-error" class="vir-input-error-msg"></div>
+                </div>
+                
+                <div class="vir-form-group">
+                    <label for="email">Email</label>
+                    <div class="vir-input-wrapper">
+                        <i data-lucide="mail" class="vir-input-icon"></i>
+                        <input type="email" id="email" class="vir-input" placeholder="Masukkan email Anda" required />
+                    </div>
+                    <div id="email-error" class="vir-input-error-msg"></div>
+                </div>
+                
+                <div class="vir-form-group">
+                    <label for="password">Kata Sandi</label>
+                    <div class="vir-input-wrapper">
+                        <i data-lucide="lock" class="vir-input-icon"></i>
+                        <input type="password" id="password" class="vir-input" placeholder="Buat kata sandi baru" required />
+                        <button type="button" class="vir-toggle-password" aria-label="Toggle password visibility">
+                            <i data-lucide="eye"></i>
+                        </button>
+                    </div>
+                    <div id="password-error" class="vir-input-error-msg"></div>
+                    
+                    <div id="password-strength" class="vir-password-strength"></div>
+                    
+                    <div id="password-requirements" class="vir-password-requirements">
+                        <ul>
+                            <li data-requirement="length">Minimal 5 & Maksimal 8 Karakter</li>
+                            <li data-requirement="start-uppercase">Diawali Huruf Besar</li>
+                            <li data-requirement="number">Mengandung Angka</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="vir-form-group">
+                    <label for="confirm-password">Ulangi Kata Sandi</label>
+                    <div class="vir-input-wrapper">
+                        <i data-lucide="lock" class="vir-input-icon"></i>
+                        <input type="password" id="confirm-password" class="vir-input" placeholder="Ulangi kata sandi" required />
+                        <button type="button" class="vir-toggle-password" aria-label="Toggle password visibility">
+                            <i data-lucide="eye"></i>
+                        </button>
+                    </div>
+                    <div id="confirm-password-error" class="vir-input-error-msg"></div>
+                </div>
+                
+                <div class="vir-form-group optional">
+                    <label for="telegram-username">Username Telegram (Opsional)</label>
+                    <div class="vir-input-wrapper">
+                        <i data-lucide="send" class="vir-input-icon"></i>
+                        <input type="text" id="telegram-username" class="vir-input" placeholder="Cth: @username_kamu" />
+                    </div>
+                    <div id="telegram-username-error" class="vir-input-error-msg"></div>
+                </div>
+                
+                <div class="vir-form-check">
+                    <input type="checkbox" id="terms-checkbox" required />
+                    <label for="terms-checkbox">Saya setuju dengan <a href="#" class="vir-link-style">Syarat & Ketentuan</a> serta <a href="#" class="vir-link-style">Kebijakan Privasi</a>.</label>
+                </div>
+                
+                <button type="submit" id="signup-submit-btn" class="vir-btn-submit">
+                    Daftar
+                </button>
+            </form>
+        </div>
+    </div>
+    
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+      lucide.createIcons();
+    </script>
+    
+    <!-- Tautkan ke skrip otentikasi yang sudah diperbarui -->
+    <script type="module" src="js/auth.js"></script>
+    <script type="module" src="js/script-1.js"></script>
+</body>
+</html>
+
