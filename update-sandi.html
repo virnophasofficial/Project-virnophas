@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atur Ulang Kata Sandi | Virnophas Official</title>
+    <!-- Tautkan ke file CSS yang sudah diperbarui -->
+    <link rel="stylesheet" href="css/style-1.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="vir-login-page" vir-theme="light">
+    <div class="vir-auth-container">
+        <button id="vir-theme-toggle" class="vir-theme-toggle vir-icon-btn"><i data-lucide="moon"></i></button>
+
+        <div class="vir-auth-card">
+            <h2 class="vir-auth-title">Atur Ulang Kata Sandi</h2>
+
+            <!-- Formulir utama untuk mengatur ulang kata sandi -->
+            <form id="reset-password-form" class="vir-form-container active">
+                <p class="vir-form-instruction">Masukkan kata sandi baru Anda.</p>
+                
+                <div class="vir-form-group">
+                    <label for="new-password">Kata Sandi Baru</label>
+                    <div class="vir-input-wrapper">
+                        <i data-lucide="lock" class="vir-input-icon"></i>
+                        <input type="password" id="new-password" class="vir-input" placeholder="Masukkan kata sandi baru" required>
+                        <button type="button" class="vir-toggle-password" aria-label="Toggle password visibility">
+                            <i data-lucide="eye"></i>
+                        </button>
+                    </div>
+                    <span id="new-password-error" class="vir-input-error-msg"></span>
+                    
+                    <!-- Area untuk menampilkan indikator kekuatan dan persyaratan kata sandi -->
+                    <div id="password-strength-text" class="vir-password-strength-text"></div>
+                    <div id="password-strength-bar" class="vir-password-strength-bar"></div>
+
+                    <div id="password-requirements" class="vir-password-requirements">
+                        <ul>
+                            <li data-requirement="length">5-12 karakter</li>
+                            <li data-requirement="uppercase">Satu huruf besar</li>
+                            <li data-requirement="lowercase">Satu huruf kecil</li>
+                            <li data-requirement="number">Satu angka</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="vir-form-group">
+                    <label for="confirm-new-password">Konfirmasi Kata Sandi Baru</label>
+                    <div class="vir-input-wrapper">
+                        <i data-lucide="lock" class="vir-input-icon"></i>
+                        <input type="password" id="confirm-new-password" class="vir-input" placeholder="Konfirmasi kata sandi baru" required>
+                        <button type="button" class="vir-toggle-password" aria-label="Toggle password visibility">
+                            <i data-lucide="eye"></i>
+                        </button>
+                    </div>
+                    <span id="confirm-new-password-error" class="vir-input-error-msg"></span>
+                </div>
+
+                <button type="submit" id="reset-submit-btn" class="vir-btn-submit">Atur Ulang</button>
+            </form>
+            
+            <!-- Area pesan sukses yang awalnya disembunyikan -->
+            <div id="success-message-box" class="vir-success-message-box" style="display: none;">
+                <i data-lucide="check-circle" class="vir-icon-success"></i>
+                <div class="vir-message-text">Kata Sandi Berhasil Diubah!</div>
+                <div class="vir-message-small">Anda dapat kembali ke halaman masuk.</div>
+            </div>
+            
+            <p class="vir-form-instruction vir-go-back" style="text-align: center; margin-top: 1.5rem;">
+                <a href="index.html">Kembali ke Masuk</a>
+            </p>
+        </div>
+    </div>
+
+<div id="vir-toast" class="vir-toast"></div>
+
+<!-- Tautkan ke skrip yang sudah diperbarui -->
+<script type="module" src="js/update-sandi.js"></script>
+</body>
+</html>
+
