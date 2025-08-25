@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="id" vir-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Virnophas Official - Sumber konfigurasi (config) PUBG Mobile yang aman dan gratis. Tingkatkan performa, stabilkan FPS, dan optimalkan grafik untuk pengalaman bermain bebas lag." />
+    <meta name="keywords" content="Virnophas Official, config PUBG Mobile, config pubg, pubg mobile anti lag, pubg fps, pubg mobile low end device, config 32 bit, config 64 bit, pubg mobile gratis, virnophas" />
+    <meta name="author" content="Malgath Cargeiros" />
+    <link rel="icon" href="assets/images/images.png" type="image/png" />
+    <title>Virnophas Official</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Plus+Jakarta+Sans:wght@400;600&display=swap" rel="stylesheet" />
+    
+    <script src="https://cdn.jsdelivr.net/npm/lucide@0.292.0/dist/lucide.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <link rel="stylesheet" href="css/style-dashboard.css" />
+</head>
+
+  <body>
+
+<header class="vir-navbar">
+  <div class="vir-nav-left">
+    <h1 class="vir-judul">Virnophas Official</h1>
+  </div>
+  <div class="vir-nav-actions">
+<button id="vir-notification-bell" class="vir-icon-btn" aria-label="Notifikasi">
+    <i data-lucide="bell" class="vir-icon"></i>
+    <span id="vir-notification-badge" class="vir-notification-badge"></span>
+</button>
+
+<div id="vir-notification-dropdown" class="vir-notification-dropdown">
+    <div class="vir-notification-header">
+        <h4 class="vir-dropdown-title">Pemberitahuan</h4>
+    </div>
+    <div id="vir-notification-list" class="vir-notification-list">
+        <p class="vir-placeholder-text">Tidak ada notifikasi baru.</p>
+    </div>
+    <div class="vir-notification-footer">
+        <a href="#" id="vir-dropdown-footer" class="vir-dropdown-footer">Lihat Semua</a>
+    </div>
+</div>
+
+
+    <button id="vir-toggle-theme" aria-label="Toggle Theme" class="vir-icon-btn">
+      <i id="vir-theme-icon" data-lucide="sun" class="vir-icon"></i>
+    </button>
+
+    <button id="vir-toggle-menu" aria-label="Toggle Menu Sidebar" class="vir-icon-btn">
+      <i id="vir-menu-icon" data-lucide="menu" class="vir-icon"></i>
+    </button>
+  </div>
+</header>
+
+<nav id="vir-sidebar" class="vir-sidebar" aria-label="Navigasi Sidebar">
+    <div class="sidebar-header">
+        <div class="vir-header-controls">
+            <button id="vir-profile-btn" aria-label="Buka Profil" class="vir-icon-btn">
+                <i id="vir-profile-icon" data-lucide="user" class="vir-icon"></i>
+            </button>
+            <button id="vir-close-sidebar" aria-label="Tutup Sidebar" class="vir-icon-btn">
+                <i id="vir-close-icon" data-lucide="x" class="vir-icon"></i>
+            </button>
+        </div>
+    </div>
+    
+    <ul class="vir-sidebar-menu">
+    <li><a href="index.html"><i data-lucide="home"></i> <span>Beranda</span></a></li>
+    <li><a href="index.html#tim-kami"><i data-lucide="users"></i> <span>Tim Kami</span></a></li>
+        <li><a href="index.html#legal"><i data-lucide="gavel"></i> <span>Legal</span></a></li>
+    <li><a href="index.html#faq"><i data-lucide="help-circle"></i> <span>FAQ</span></a></li>
+    <li><a href="index.html#testimoni"><i data-lucide="message-square-quote"></i> <span>Testimoni</span></a></li>
+</ul>
+
+    <div class="vir-social-icons">
+        <a href="https://youtube.com/@virnophasgaming?si=h4MNpgg7EzVhf-QV" class="youtube"><i data-lucide="youtube"></i></a>
+        <a href="https://t.me/VirnophasOriginal" class="boxes"><i data-lucide="boxes"></i></a>
+        <a href="https://saweria.co/Virnophas" class="hand-coins"><i data-lucide="hand-coins"></i></a>
+    </div>
+
+    <div class="vir-sidebar-footer">
+        <div class="vir-datetime-container">
+            <div id="vir-time"></div>
+            <div id="vir-date"></div>
+        </div>
+    </div>
+</nav>
+
+<div id="vir-jendela-profil" class="vir-lapis-modal">
+    <div class="vir-isi-modal vir-kartu-timbul">
+        <div class="vir-kepala-modal">
+            <h3 id="vir-judul-modal">Profil Pengguna</h3>
+            <button id="vir-tombol-tutup" aria-label="Tutup Modal" class="vir-tombol-ikon">
+                <i data-lucide="x"></i>
+            </button>
+        </div>
+
+        <div id="vir-tamu-profil" class="vir-kartu-profil">
+            <img src="assets/images/profil.jpg" alt="Virnophas Official Avatar" class="vir-foto-profil">
+            <h4 class="vir-nama-profil">Virnophas Official</h4>
+            <p class="vir-keterangan-profil">
+              Website Dan Channel resmi yang menyediakan konfigurasi (config) untuk mengoptimalkan performa PUBG Mobile. Kami berkomitmen menyediakan solusi legal dan aman untuk mengatasi masalah lag, FPS drop, dan kendala teknis lainnya. Semua konten kami dirancang untuk meningkatkan pengalaman bermain tanpa melanggar peraturan permainan.
+            </p> <p class="vir-status-profil">Anda belum login.</p>
+            <div class="vir-ikon-sosial-modal">
+                <a href="#" aria-label="Facebook"><i data-lucide="facebook"></i></a>
+                <a href="https://x.com/Cargeiros" aria-label="Twitter"><i data-lucide="twitter"></i></a>
+                <a href="https://t.me/AerithMeridithasBOT" aria-label="handshake"><i data-lucide="handshake"></i></a>
+                <a href="https://www.youtube.com/@VirnophasX" aria-label="YouTube"><i data-lucide="youtube"></i></a>
+            </div> 
+            <div class="vir-aksi-modal">
+                <a href="login-signup.html" class="vir-tombol-masuk">Login</a>
+                <a href="login-signup.html" class="vir-tombol-daftar">Daftar</a>
+            </div>
+        </div>
+        
+        <div id="vir-pengguna-profil" class="vir-kartu-profil" style="display: none;">
+            <div class="vir-profile-avatar-container">
+                <img id="vir-avatar-pengguna" src="assets/images/user-default.jpg" alt="User Avatar" class="vir-foto-profil">
+                <input type="file" id="avatar-input" accept="image/*" style="display: none;">
+                <button class="vir-profile-edit-btn" onclick="document.getElementById('avatar-input').click()">
+                    <i data-lucide="edit"></i>
+                </button>
+            </div>
+            
+            <div class="vir-profile-details">
+                <h4 id="vir-nama-lengkap-pengguna" class="vir-nama-profil">Nama Lengkap</h4>
+                <p id="vir-username-pengguna" class="vir-keterangan-profil">@username</p>
+                <p id="vir-email-pengguna" class="vir-status-profil">email@example.com</p>
+                <p id="vir-telegram-pengguna" class="vir-keterangan-profil">Telegram: @telegram</p>
+            </div>
+
+            <div class="vir-aksi-modal">
+              
+                <button id="vir-tombol-keluar" class="vir-tombol-keluar">Logout</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="vir-main-content">
+  <section class="vir-welcome-section">
+    <div class="vir-card vir-welcome-card">
+      <h2 class="vir-welcome-title">Selamat Datang di Komunitas Virnophas Official!</h2>
+      <p class="vir-welcome-text">Kami senang Anda berada di sini. Jelajahi dashboard untuk mendapatkan informasi terbaru dan statistik komunitas.</p>
+    </div>
+  </section>
+
+  <section class="vir-summary-section">
+      <div class="vir-summary-grid">
+          <div class="vir-card vir-summary-card">
+              <div class="vir-summary-icon-wrapper"><i data-lucide="users"></i></div>
+              <div class="vir-summary-text">
+                  <h4 class="vir-summary-title">Total Akun</h4>
+                  <p class="vir-summary-value" id="total-accounts-value">0</p>
+              </div>
+          </div>
+          <div class="vir-card vir-summary-card">
+              <div class="vir-summary-icon-wrapper"><i data-lucide="activity"></i></div>
+              <div class="vir-summary-text">
+                  <h4 class="vir-summary-title">Pengguna Aktif</h4>
+                  <p class="vir-summary-value" id="active-users-value">0</p>
+              </div>
+          </div>
+          <div class="vir-card vir-summary-card">
+              <div class="vir-summary-icon-wrapper"><i data-lucide="download"></i></div>
+              <div class="vir-summary-text">
+                  <h4 class="vir-summary-title">Total Unduhan</h4>
+                  <p class="vir-summary-value" id="total-downloads-value">0</p>
+              </div>
+          </div>
+          <div class="vir-card vir-summary-card">
+              <div class="vir-summary-icon-wrapper"><i data-lucide="trending-up"></i></div>
+              <div class="vir-summary-text">
+                  <h4 class="vir-summary-title">Tutorial Terpopuler</h4>
+                  <p class="vir-summary-value" id="popular-tutorial-value">...</p>
+              </div>
+          </div>
+      </div>
+  </section>
+  
+  <section class="vir-analytics-section">
+    <div class="vir-card vir-chart-card">
+      <div class="vir-chart-header">
+        <h3 id="chart-title">Pengunjung Harian</h3>
+        <select id="chart-selector" class="vir-chart-selector">
+          <option value="daily">Harian</option>
+          <option value="weekly">Mingguan</option>
+          <option value="monthly">Bulanan</option>
+          <option value="yearly">Tahunan</option>
+        </select>
+      </div>
+      <div class="vir-chart-container">
+        <canvas id="main-chart"></canvas>
+      </div>
+    </div>
+  </section>
+
+  <section class="vir-articles-section">
+    <h2>Tutorial & Panduan</h2>
+    <div class="vir-articles-grid">
+      <div class="vir-card vir-article-card" data-tutorial-id="tutorial-1">
+        <img src="https://via.placeholder.com/400x200" alt="Gambar Tutorial" class="vir-article-image">
+        <div class="vir-article-body">
+          <div class="vir-article-header">
+            <h3>Cara Install Config Anti Lag</h3>
+            <button class="vir-favorite-btn"><i data-lucide="heart"></i></button>
+          </div>
+          <p class="vir-article-snippet">Panduan singkat tentang cara menerapkan konfigurasi kami di perangkat Anda.</p>
+          
+          <div class="vir-article-content">
+            <ol>
+              <li>Unduh file konfigurasi dari tautan yang disediakan.</li>
+              <li>Buka file manager Anda dan cari file `.zip` yang baru diunduh.</li>
+              <li>Ekstrak file `.zip` tersebut.</li>
+              <li>Salin folder yang sudah diekstrak ke direktori `Android/data/com.tencent.ig/files/UE4Game/ShadowTrackerExtra/Saved/Config/Android`.</li>
+              <li>Restart game Anda untuk melihat perubahannya.</li>
+            </ol>
+            <p>Jika Anda mengalami masalah, jangan ragu untuk menghubungi dukungan kami di Telegram.</p>
+          </div>
+          
+          <button class="vir-collapse-btn">
+            Lihat Panduan <i data-lucide="chevron-down" class="vir-collapse-icon"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="vir-card vir-article-card" data-tutorial-id="tutorial-2">
+        <img src="https://via.placeholder.com/400x200" alt="Gambar Tutorial" class="vir-article-image">
+        <div class="vir-article-body">
+          <div class="vir-article-header">
+            <h3>Optimalkan Performa & FPS</h3>
+            <button class="vir-favorite-btn"><i data-lucide="heart"></i></button>
+          </div>
+          <p class="vir-article-snippet">Tips dan trik untuk meningkatkan performa PUBG Mobile pada perangkat low-end.</p>
+          
+          <div class="vir-article-content">
+            <ul>
+              <li>Pastikan memori RAM Anda tidak penuh dengan aplikasi lain.</li>
+              <li>Gunakan pengaturan grafis "Smooth" dan "Extreme FPS" untuk pengalaman bermain yang optimal.</li>
+              <li>Hapus cache game secara berkala dari pengaturan aplikasi.</li>
+              <li>Gunakan pendingin eksternal untuk menjaga suhu perangkat.</li>
+            </ul>
+          </div>
+          
+          <button class="vir-collapse-btn">
+            Lihat Tips <i data-lucide="chevron-down" class="vir-collapse-icon"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="vir-profile-details-section">
+      <div class="vir-card vir-detail-profil">
+          <div id="vir-user-profile-details">
+              <h4>Riwayat Unduhan</h4>
+              <p class="vir-subtext" style="font-style: italic; font-size: 0.85rem; color: var(--vir-text);">Riwayat ini akan terisi setelah Anda mengunduh konfigurasi.</p>
+              <ul id="vir-download-history" class="vir-download-list"></ul>
+              <h4 style="margin-top: 1.5rem;">Tutorial Favorit</h4>
+              <p class="vir-subtext" style="font-style: italic; font-size: 0.85rem; color: var(--vir-text);">Tutorial yang Anda favoritkan akan muncul di sini.</p>
+              <ul id="vir-favorite-list" class="vir-download-list"></ul>
+          </div>
+      </div>
+  </section>
+</main>
+
+<footer class="vir-footer">
+  <span>Dibuat oleh</span>
+  <i data-lucide="heart"></i>
+  <a href="https://t.me/VirnophasOriginal" class="footer-link">Virnophas Official</a>
+  <span>— 2025</span>
+</footer>
+
+<script src="https://unpkg.com/lucide@latest"></script>
+<script type="module" src="js/dashboard-script.js"></script>
+
+
+<script type="module" src="js/supabaseClient.js"></script>
+<script type="module" src="js/auth.js"></script>
+
+<script>
+    lucide.createIcons();
+</script>
+
+  </body>
+</html>
