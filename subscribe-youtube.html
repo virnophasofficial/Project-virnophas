@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wajib Subscribe! | Virnophas Official</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/lucide.min.js"></script>
+    <style>
+        /*
+         * ========================================
+         * File: custom-styles-subscribe.css
+         * Tema: Style khusus untuk halaman subscribe
+         * Proyek: Virnophas Official
+         * ========================================
+         */
+        
+        /* Tema Gelap dan Terang */
+        :root {
+            --bg-color: #f3f4f6;
+            --card-bg: #ffffff;
+            --text-color: #1f2937;
+            --primary-color: #ef4444;
+            --shadow-color: rgba(0, 0, 0, 0.05);
+        }
+        [vir-theme="dark"] {
+            --bg-color: #111827;
+            --card-bg: #1f2937;
+            --text-color: #f3f4f6;
+            --primary-color: #ef4444;
+            --shadow-color: rgba(255, 255, 255, 0.05);
+        }
+
+        /* Gaya Dasar dan Responsif */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: background-color 0.3s, color 0.3s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 1rem;
+        }
+
+        /* Gaya Kartu Konten */
+        .vir-card {
+            background-color: var(--card-bg);
+            border-radius: 1rem;
+            box-shadow: 0 10px 15px -3px var(--shadow-color), 0 4px 6px -2px var(--shadow-color);
+            max-width: 28rem;
+            width: 100%;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        /* Gaya Tombol */
+        .vir-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.75rem;
+            font-weight: 600;
+            transition: background-color 0.2s, box-shadow 0.2s, transform 0.2s;
+            text-decoration: none;
+            color: white;
+            margin-top: 1rem;
+        }
+        .vir-btn.youtube {
+            background-color: #ff0000;
+        }
+        .vir-btn.youtube:hover {
+            background-color: #cc0000;
+            box-shadow: 0 4px 6px rgba(255, 0, 0, 0.3);
+            transform: translateY(-2px);
+        }
+        .vir-btn.lanjutkan {
+            background-color: #3b82f6;
+            cursor: pointer;
+        }
+        .vir-btn.lanjutkan:disabled {
+            background-color: #9ca3af;
+            cursor: not-allowed;
+        }
+        .vir-btn.lanjutkan:hover:not(:disabled) {
+            background-color: #2563eb;
+            box-shadow: 0 4px 6px rgba(59, 130, 246, 0.3);
+            transform: translateY(-2px);
+        }
+
+        /* Gaya Teks */
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        p {
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        /* Tambahkan style untuk tema terang */
+        .theme-toggle-btn {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            background: var(--card-bg);
+            color: var(--text-color);
+            border: none;
+            border-radius: 50%;
+            width: 2.5rem;
+            height: 2.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 6px -1px var(--shadow-color), 0 2px 4px -1px var(--shadow-color);
+            transition: background-color 0.3s, color 0.3s, transform 0.2s;
+        }
+        .theme-toggle-btn:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body vir-theme="dark">
+    <div class="vir-card">
+        <h2 class="text-2xl font-bold">Verifikasi Akun</h2>
+        <p>
+            Sebelum masuk ke akun, Anda perlu <b>Subscribe</b> channel YouTube Virnophas terlebih dahulu. Ini adalah bagian dari verifikasi akun.
+        </p>
+        <a id="youtube-btn" href="https://www.youtube.com/@virnophasX" target="_blank" class="vir-btn youtube">
+            <i data-lucide="youtube" class="mr-2"></i> Subscribe Sekarang
+        </a>
+        <button id="continue-btn" class="vir-btn lanjutkan mt-6" disabled>
+            Verifikasi Selesai, Lanjutkan
+        </button>
+    </div>
+    
+    <!-- Tombol Tema -->
+    <button id="vir-theme-toggle" class="theme-toggle-btn">
+        <i data-lucide="moon"></i>
+    </button>
+
+    <script src="subscribe-youtube-script.js"></script>
+    <script>
+        // Memastikan ikon Lucide dibuat setelah DOM dimuat
+        document.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+            
+            // Logika sederhana untuk tema (agar berfungsi di halaman ini)
+            const body = document.body;
+            const themeToggleBtn = document.getElementById('vir-theme-toggle');
+            const savedTheme = localStorage.getItem('vir-theme');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const currentTheme = savedTheme || (prefersDark ? 'dark' : 'light');
+            body.setAttribute('vir-theme', currentTheme === 'dark' ? 'dark' : '');
+            themeToggleBtn.innerHTML = currentTheme === 'dark' ? `<i data-lucide="sun"></i>` : `<i data-lucide="moon"></i>`;
+            lucide.createIcons();
+            themeToggleBtn.addEventListener('click', () => {
+                const theme = body.getAttribute('vir-theme') === 'dark' ? 'light' : 'dark';
+                body.setAttribute('vir-theme', theme === 'dark' ? 'dark' : '');
+                localStorage.setItem('vir-theme', theme);
+                themeToggleBtn.innerHTML = theme === 'dark' ? `<i data-lucide="sun"></i>` : `<i data-lucide="moon"></i>`;
+                lucide.createIcons();
+            });
+        });
+    </script>
+</body>
+</html>
+
