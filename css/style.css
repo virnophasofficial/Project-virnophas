@@ -2,67 +2,97 @@
    ========== Virnophas CSS Theme ==========
    ======================================= */
 
-/* ========= Variabel Warna ========= */
+/* =======================================
+   ======== VARIABEL WARNA DAN FONT GLOBAL =========
+   ======================================= */
 :root {
-  /* Variabel warna global untuk tema terang */
-  --vir-bg: #f4f7fa;
-  --vir-text: #333;
-  --vir-accent: #6366f1;
-  --vir-card-bg: rgba(255, 255, 255, 0.8);
-  --vir-link: #555;
-  --vir-shadow: rgba(0, 0, 0, 0.1);
-  --vir-primary: #6366f1; /* Contoh: Indigo */
-
+  /* Variabel warna global untuk tema terang (Soft UI) */
+  --vir-bg: #f0f4f8; 
+  --vir-text: #2a3038;
+  --vir-accent: #6c63ff;
+  --vir-card-bg: rgba(255, 255, 255, 0.9);
+  --vir-link: #5c6ac4;
+  --vir-primary: #6c63ff;
+  --vir-secondary: #00bcd4;
+  --vir-border-color: #e0e6ed;
+  --vir-shadow-light: rgba(0, 0, 0, 0.2); 
+  --vir-shadow-dark: rgba(0, 0, 0, 0.4);   
+  
   /* ==============================================
      === VARIABEL WARNA UNTUK ALERT BOX ARTIKEL ===
      ===           (Warna Statis)               ===
      ============================================== */
+  --vir-artikel-informasi-bg: #e0f7fa;
+  --vir-artikel-informasi-text: #00798c;
+  --vir-artikel-informasi-border: #00bcd4;
+  
+  --vir-artikel-sukses-bg: #e8f5e9;
+  --vir-artikel-sukses-text: #2e7d32;
+  --vir-artikel-sukses-border: #4caf50;
 
-  /* Variabel untuk alert 'Informasi' */
-  --vir-artikel-informasi-bg: #e0f2fe;
-  --vir-artikel-informasi-text: #075985;
-  --vir-artikel-informasi-border: #38bdf8;
+  --vir-artikel-peringatan-bg: #fffde7;
+  --vir-artikel-peringatan-text: #ff8f00;
+  --vir-artikel-peringatan-border: #ffc107;
   
-  /* Variabel untuk alert 'Sukses' */
-  --vir-artikel-sukses-bg: #dcfce7;
-  --vir-artikel-sukses-text: #166534;
-  --vir-artikel-sukses-border: #4ade80;
+  --vir-artikel-bahaya-bg: #fbe9e7;
+  --vir-artikel-bahaya-text: #d32f2f;
+  --vir-artikel-bahaya-border: #f44336;
+  
+  --vir-artikel-iklan-bg: #f3e5f5;
+  --vir-artikel-iklan-text: #6a1b9a;
+  --vir-artikel-iklan-border: #9c27b0;
 
-  /* Variabel untuk alert 'Peringatan' */
-  --vir-artikel-peringatan-bg: #fffbe6;
-  --vir-artikel-peringatan-text: #78350f;
-  --vir-artikel-peringatan-border: #facc15;
-  
-  /* Variabel untuk alert 'Bahaya' */
-  --vir-artikel-bahaya-bg: #fee2e2;
-  --vir-artikel-bahaya-text: #991b1b;
-  --vir-artikel-bahaya-border: #f87171;
-  
-  /* Variabel untuk alert 'Iklan' */
-  --vir-artikel-iklan-bg: #f5f3ff;
-  --vir-artikel-iklan-text: #6b21a8;
-  --vir-artikel-iklan-border: #a855f7;
+  /* ==============================================
+     ==== VARIALBEL UNTUK ANIMASI BORDER =========
+     ============================================== */
+  --vir-border-anim-1: #6c63ff;
+  --vir-border-anim-2: #00bcd4;
+  --vir-border-anim-3: #ffc107;
+  --vir-border-anim-4: #f44336;
 }
 
 [vir-theme="dark"] {
   /* Variabel warna global untuk tema gelap */
-  --vir-bg: #111827;
-  --vir-text: #f1f5f9;
-  --vir-card-bg: rgba(30, 41, 59, 0.8);
-  --vir-link: #cbd5e1;
-  --vir-primary: #818cf8; /* Lebih terang di gelap */
+  --vir-bg: #1e2a3a;
+  --vir-text: #e2e8f0;
+  --vir-accent: #818cf8;
+  --vir-card-bg: rgba(45, 55, 72, 0.9);
+  --vir-link: #90cdf4;
+  --vir-primary: #818cf8;
+  --vir-secondary: #00e5ff;
+  --vir-border-color: #4a5568;
+  --vir-shadow-light: rgba(0, 0, 0, 0.5); 
+  --vir-shadow-dark: rgba(0, 0, 0, 0.7);   
+  --vir-border-anim-1: #818cf8;
+  --vir-border-anim-2: #00e5ff;
+  --vir-border-anim-3: #ffc107;
+  --vir-border-anim-4: #f44336;
 }
 
+/* =======================================
+   ======== RESET DAN FONT BARU =========
+   ======================================= */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
-/* ========= Reset Body ========= */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'Inter', 'Plus Jakarta Sans', sans-serif;
   background: var(--vir-bg);
   color: var(--vir-text);
   margin: 0;
   padding: 0;
-  line-height: 1.6; /* Biar nyaman dibaca */
-  transition: background 0.3s ease, color 0.3s ease;
+  line-height: 1.6;
+  transition: background 0.5s ease, color 0.5s ease;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 /* ========= Heading Tag SEO-Friendly ========= */
@@ -74,30 +104,117 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--vir-text);
 }
 
-h1 {
-  font-size: 2rem; /* Utama untuk judul halaman */
+h1 { font-size: 2.25rem; }
+h2 { font-size: 1.875rem; }
+h3 { font-size: 1.5rem; }
+h4 { font-size: 1.25rem; }
+h5 { font-size: 1.125rem; }
+h6 { font-size: 1rem; font-weight: 600; }
+
+/* =======================================
+   ======== GAYA UI UMUM =========
+   ======================================= */
+.vir-card,
+.vir-sidebar {
+    background: var(--vir-card-bg);
+    border-radius: 12px;
+    box-shadow: 0 8px 16px var(--vir-shadow-light), 0 3px 6px var(--vir-shadow-light);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--vir-border-color);
+    transition: all 0.3s ease;
 }
 
-h2 {
-  font-size: 1.75rem; /* Subjudul utama */
+.vir-card {
+  padding: 1.5rem;
 }
 
-h3 {
-  font-size: 1.5rem; /* Subjudul tingkat 2 */
+.vir-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px var(--vir-shadow-dark), 0 4px 8px var(--vir-shadow-dark);
 }
 
-h4 {
-  font-size: 1.25rem;
+.vir-btn {
+    background: var(--vir-primary);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-h5 {
-  font-size: 1.1rem;
+.vir-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
 
-h6 {
-  font-size: 1rem;
-  font-weight: 600;
+.vir-btn-secondary {
+    background: var(--vir-secondary);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
+
+.vir-btn-secondary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.vir-btn:active,
+.vir-btn-secondary:active,
+.vir-tab-button:active {
+    background-color: transparent !important;
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+
+/* ==============================================
+   ==== ANIMASI BORDER UNTUK ELEMEN SPESIFIK ====
+   ============================================== */
+.vir-animated-border {
+  border: 4px solid transparent;
+  animation: vir-border-animate 5s infinite;
+  background-clip: padding-box;
+}
+
+@keyframes vir-border-animate {
+  0% { border-color: var(--vir-border-anim-1); }
+  25% { border-color: var(--vir-border-anim-2); }
+  50% { border-color: var(--vir-border-anim-3); }
+  75% { border-color: var(--vir-border-anim-4); }
+  100% { border-color: var(--vir-border-anim-1); }
+}
+
+/* ==============================================
+   ===== PERBAIKAN SPESIFIK UNTUK NAVBAR, =====
+   ======== FOOTER, DAN TOMBOL =========
+   ============================================== */
+.vir-navbar,
+.vir-footer {
+  background: var(--vir-card-bg);
+  box-shadow: 0 8px 16px var(--vir-shadow-light), 0 3px 6px var(--vir-shadow-light);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--vir-border-color);
+  transition: all 0.3s ease;
+}
+
+.vir-navbar {
+  padding: 1rem 1.5rem;
+  margin-bottom: 0;
+  border-radius: 0;
+}
+
+.vir-footer {
+  padding: 1rem 1.5rem;
+  margin-top: 0;
+  border-radius: 0;
+}
+
+#vir-toggle-menu {
+  padding: 10px;
+}
+
+
 
 /* =======================================
    ========== NAVBAR =====================
@@ -108,7 +225,7 @@ h6 {
   align-items: center;
   padding: 1rem 2rem;
   background-color: var(--vir-card-bg);
-  box-shadow: 0 8px 16px var(--vir-shadow);
+  box-shadow: 0 8px 16px var(--vir-shadow-light);
   backdrop-filter: blur(10px);
   position: sticky;
   top: 0;
@@ -179,356 +296,375 @@ button {
   }
 }
 
-/* =======================================
-   ========== SIDEBAR ====================
-   ======================================= */
+/* Menjadikan tombol lebih mudah diklik */
+#vir-toggle-menu {
+    padding: 10px;
+}
 
-/* Sidebar Utama - Disembunyikan secara default */
+
+
+/* --- NOTIFIKASI UMUM --- */
+.vir-icon-btn {
+    position: relative;
+}
+
+.vir-notification-badge {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: #ef4444; 
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid var(--vir-card-bg);
+    display: none;
+    pointer-events: none;
+}
+
+/* --- DROPDOWN NOTIFIKASI --- */
+.vir-notification-dropdown {
+    position: absolute;
+    top: calc(100% + 15px);
+    right: 1.5rem;
+    width: 300px;
+    max-width: 90vw;
+    background-color: var(--vir-card-bg); /* Menggunakan variabel */
+    box-shadow: 0 10px 20px var(--vir-shadow-light);
+    border-radius: 12px;
+    padding: 1rem;
+    border: 1px solid var(--vir-border-color);
+    backdrop-filter: blur(10px);
+    z-index: 10;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+}
+
+/* Status aktif saat diklik */
+.vir-notification-dropdown.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Header dan Footer di Dropdown */
+.vir-notification-header,
+.vir-notification-footer {
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--vir-border-color);
+}
+.vir-notification-footer {
+    border-top: 1px solid var(--vir-border-color);
+    padding-top: 0.5rem;
+    border-bottom: none;
+}
+.vir-dropdown-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0;
+}
+.vir-dropdown-footer {
+    display: block;
+    text-align: center;
+    color: var(--vir-link);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+.vir-placeholder-text {
+    text-align: center;
+    color: var(--vir-text);
+    font-style: italic;
+    margin: 1rem 0;
+}
+
+/* Daftar Notifikasi */
+.vir-notification-list {
+    max-height: 250px;
+    overflow-y: auto;
+    padding: 0.5rem 0;
+}
+.vir-notification-item {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--vir-border-color);
+    cursor: pointer;
+}
+.vir-notification-item:last-child {
+    border-bottom: none;
+}
+.vir-notification-item h5 {
+    font-size: 0.95rem;
+    margin: 0 0 0.25rem;
+    font-weight: 600;
+}
+.vir-notification-item p {
+    font-size: 0.8rem;
+    color: var(--vir-text);
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* --- ANIMASI LONCENG BERGETAR --- */
+@keyframes vir-bell-shake {
+    0% { transform: rotate(0); }
+    15% { transform: rotate(5deg); }
+    30% { transform: rotate(-5deg); }
+    45% { transform: rotate(5deg); }
+    60% { transform: rotate(-5deg); }
+    75% { transform: rotate(5deg); }
+    100% { transform: rotate(0); }
+}
+
+/* --- ANIMASI DROPDOWN MASUK --- */
+.vir-notification-dropdown {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+}
+
+.vir-notification-dropdown.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.vir-notification-bell-animating {
+    animation: vir-bell-shake 0.8s ease-in-out forwards;
+}
+
+/* =======================================================
+   ================= SIDEBAR UTAMA & LAYOUT =================
+   ======================================================= */
 .vir-sidebar {
     position: fixed;
     top: 0;
     left: -100%;
     width: 250px;
     height: 100vh;
-    
-    /* Ganti background solid dengan background semi-transparan dari variabel */
     background: var(--vir-card-bg);
-
-    /* Ini adalah properti yang menciptakan efek "kaca buram" (frosted glass) */
     backdrop-filter: blur(10px);
-
-    box-shadow: 4px 0 12px var(--vir-shadow);
-    display: flow;
+    box-shadow: 4px 0 12px var(--vir-shadow-light);
+    display: flex;
     flex-direction: column;
-    gap: 1rem;
     padding: 2rem 1.5rem;
-
-    /* Tambahkan backdrop-filter ke transisi agar efeknya halus */
     transition: left 0.5s ease-in-out, background 0.5s ease, backdrop-filter 0.5s ease;
     z-index: 1000;
+    overflow-y: auto;
 }
+
 .vir-sidebar.active {
     left: 0;
 }
 
-
-/* Tombol Tutup Sidebar - Sekarang berada di pojok kanan atas */
+/* =======================================================
+   ================= HEADER SIDEBAR BARU ===================
+   ======================================================= */
 .sidebar-header {
-    position: relative; /* Ini penting agar absolute positioning tombol close berfungsi */
-    text-align: center;
-    border-bottom: 1px solid var(--vir-shadow);
-    padding-bottom: 1rem;
-}
-
-#vir-close-sidebar {
-    position: absolute; /* Tombol diposisikan secara mutlak */
-    top: -1rem;
-    right: 0rem;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    font-size: 24px;
-    color: var(--vir-text);
-}
-
-/* Pastikan kode CSS ini menggantikan yang lama */
-.sidebar-header {
-    text-align: center;
-    border-bottom: 1px solid var(--vir-shadow);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
     padding-bottom: 1rem;
     position: relative;
+    border-bottom: 1px solid transparent;
+    animation: vir-border-animate 5s infinite;
+    background-clip: padding-box;
+    margin-bottom: 1rem;
 }
 
-.vir-profil-avatar {
-    width: 80px;
-    height: 80px;
-    background-color: var(--vir-link);
-    border-radius: 50%;
+.vir-header-controls {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 10px;
+    gap: 0.5rem;
+}
+
+/* =======================================================
+   ================== TOMBOL IKON UMUM =====================
+   ======================================================= */
+.vir-icon-btn {
+    background: none;
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+    border-radius: 0.5rem;
+    position: relative;
     overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
-.vir-profil-avatar img {
-    width: 100%;
+.vir-icon-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
     height: 100%;
-    object-fit: cover;
+    transition: width 0.7s ease-in-out;
+    z-index: -1;
 }
 
-.sidebar-header h3 {
+.vir-icon-btn:hover::before {
+    width: 100%;
+}
+
+.vir-icon-btn:active {
+    background-color: transparent !important;
+    transform: translateY(0);
+}
+
+.vir-icon-btn .vir-icon {
+    width: 24px;
+    height: 24px;
+    stroke: var(--vir-text);
+    transition: stroke 0.3s ease, transform 0.3s ease;
+}
+
+.vir-icon-btn:hover .vir-icon {
+    stroke: var(--vir-link);
+    transform: scale(1.1);
+}
+
+/* =======================================================
+   =================== MENU SIDEBAR ======================
+   ======================================================= */
+.vir-sidebar-menu {
+    list-style: none;
+    padding: 0;
     margin: 0;
-    font-size: 1.2em;
-    color: var(--vir-text);
+    flex-grow: 1;
+}
+
+.vir-sidebar-menu li {
+    position: relative;
     margin-bottom: 0.5rem;
 }
 
-.profile-description {
-    font-size: 0.9em;
+.vir-sidebar-menu li:last-child {
+    border-bottom: 1px solid transparent;
+    padding-bottom: 0.5rem;
+    animation: vir-border-animate 5s infinite;
+    background-clip: padding-box;
+}
+
+.vir-sidebar-menu a {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.75rem 1.25rem;
+    text-decoration: none;
     color: var(--vir-text);
-    margin: 5px 0 15px;
-    position: relative;
-    text-align: left;
-    display: flex;
-    align-items: center;
-    gap: 0.25rem;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
 }
 
-.profile-description .short-text {
-    display: inline;
+.vir-sidebar-menu a:hover {
+    background-color: var(--vir-link);
+    color: white;
+    transform: translateX(5px);
 }
 
-.profile-description .full-text {
-    display: none;
+.vir-sidebar-menu a.active {
+    background: var(--vir-accent);
+    color: white;
+    font-weight: 600;
 }
 
-.profile-description.expanded .short-text {
-    display: none;
+.vir-sidebar-menu a i svg {
+    stroke: var(--vir-link);
+    transition: stroke 0.2s;
 }
 
-.profile-description.expanded .full-text {
-    display: inline;
+.vir-sidebar-menu a:hover i svg,
+.vir-sidebar-menu a.active i svg {
+    stroke: white;
 }
 
-.toggle-description-btn {
-    background: none;
-    border: none;
-    color: var(--vir-accent);
-    cursor: pointer;
-    padding: 0;
-    margin-left: auto;
-    font-size: 1em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: transform 0.3s ease;
-}
-
-.toggle-description-btn[aria-expanded="true"] {
-    transform: rotate(180deg);
-}
-
-
-/* =======================================
-   ======= IKON SOSIAL MEDIA =============
-   ======================================= */
+/* =======================================================
+   ================= IKON SOSIAL MEDIA ===================
+   ======================================================= */
 .vir-social-icons {
     display: flex;
     justify-content: center;
     gap: 15px;
     margin-top: 15px;
-    position: relative; /* Penting untuk positioning garis */
-    overflow: hidden; /* Memastikan garis tidak keluar container */
-    padding-top: 2rem; /* Memberikan ruang di atas untuk garis animasi */
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    animation: vir-border-animate 5s infinite;
+    background-clip: padding-box;
+    position: relative;
 }
 
-/* Garis Animasi Atas */
-.vir-social-icons::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 3px;
-    width: 0; /* Dimulai dengan lebar 0 untuk efek animasi */
-    background: linear-gradient(
-        90deg,
-        var(--vir-link),
-        var(--vir-accent),
-        var(--vir-text)
-    );
-    transition: width 0.7s ease-in-out;
-}
-
-/* Efek Animasi: Garis muncul saat sidebar aktif */
-.vir-sidebar.active .vir-social-icons::before {
-    width: 100%;
-}
-
-/* Styling untuk setiap link ikon */
 .vir-social-icons a {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 40px;
     height: 40px;
-    border-radius: 50%; /* Membuat bentuk lingkaran */
+    border-radius: 50%;
     background-color: var(--vir-card-bg);
     color: var(--vir-link);
     transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Efek Hover pada Ikon */
 .vir-social-icons a:hover {
     background-color: var(--vir-accent);
     color: white;
-    transform: scale(1.1); /* Ikon sedikit membesar */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Menambahkan bayangan */
+    transform: scale(1.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Mengatur warna SVG di dalam ikon */
 .vir-social-icons a i svg {
     width: 24px;
     height: 24px;
     stroke: var(--vir-link);
     transition: stroke 0.3s ease-in-out;
 }
+
 .vir-social-icons a:hover i svg {
     stroke: white;
 }
 
-
-/* Styling untuk keseluruhan container menu */
-.vir-sidebar-menu {
-    list-style: none; /* Menghilangkan bullet point */
-    padding: 0;
-    margin: 0;
-}
-
-/* Styling untuk setiap link menu */
-.vir-sidebar-menu a {
-    display: flex; /* Menggunakan Flexbox untuk perataan ikon dan teks */
-    align-items: center;
-    gap: 1rem; /* Memberikan jarak antara ikon dan teks */
-    padding: 0.75rem 1.25rem;
-    text-decoration: none;
-    color: var(--vir-text);
-    border-radius: 8px; /* Membuat sudut link membulat */
-    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
-}
-
-/* Efek saat kursor diarahkan (hover) pada link */
-.vir-sidebar-menu a:hover {
-    background-color: var(--vir-link);
-    color: white;
-    transform: translateX(5px); /* Menggeser sedikit ke kanan untuk efek visual */
-}
-
-/* Styling untuk ikon */
-.vir-sidebar-menu a i {
-    width: 20px;
-    height: 20px;
-    color: var(--vir-accent);
-    transition: color 0.3s ease;
-}
-
-/* Efek saat kursor diarahkan (hover) pada ikon */
-.vir-sidebar-menu a:hover i {
-    color: white;
-}
-
-/* Styling untuk link yang sedang aktif */
-/* Tambahkan class="active" pada <a> di halaman yang sedang dibuka */
-.vir-sidebar-menu a.active {
-    background: var(--vir-accent);
-    color: white;
-    font-weight: 600; /* Membuat teks sedikit lebih tebal */
-}
-
-.vir-sidebar-menu a.active i {
-    color: white;
-}
-
-/* Mengatur warna dan efek hover pada SVG di dalam tag <i> */
-.vir-sidebar a i svg {
-    stroke: var(--vir-link); /* Warna default */
-    transition: stroke 0.2s;
-}
-.vir-sidebar a:hover i svg {
-    stroke: var(--vir-accent); /* Warna saat hover */
-}
-
-/* =======================================
-   ======= VIR-SIDEBAR-FOOTER (FINAL) ====
-   ======================================= */
+/* =======================================================
+   =============== FOOTER & JAM/TANGGAL ==================
+   ======================================================= */
 .vir-sidebar-footer {
-    
     text-align: center;
+    padding-top: 1rem;
+    border-top: 1px solid transparent;
     position: relative;
+    margin-top: auto;
     overflow: hidden;
+    background-clip: padding-box;
+    animation: vir-border-animate 5s infinite;
 }
 
-/* Pseudo-element untuk garis animasi di atas footer */
-.vir-sidebar-footer::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 3px;
-    width: 0;
-    background: linear-gradient(
-        90deg,
-        var(--vir-link),
-        var(--vir-accent),
-        var(--vir-text)
-    );
-    transition: width 0.7s ease-in-out;
+@keyframes vir-border-animate {
+    0% { border-color: var(--vir-border-anim-1); }
+    25% { border-color: var(--vir-border-anim-2); }
+    50% { border-color: var(--vir-border-anim-3); }
+    75% { border-color: var(--vir-border-anim-4); }
+    100% { border-color: var(--vir-border-anim-1); }
 }
 
-/* === GARIS DI ATAS DAN DI BAWAH JAM DAN TANGGAL === */
 .vir-datetime-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* border-top: 3px solid#e820d2; <-- Hapus baris ini */
-    /* border-bottom: 8px solid #43df0f; <-- Hapus baris ini */
     margin-bottom: 10px;
-    padding-top: 36px; /* <-- Atur padding-top agar tidak mepet dengan garis atas */
-    padding-bottom: 36px; /* <-- Atur padding-bottom agar tidak mepet dengan garis bawah */
     justify-content: center;
     gap: 0.25rem;
     color: var(--vir-text);
     cursor: pointer;
     transition: transform 0.3s ease;
-    
-    position: relative;
-    overflow: hidden;
 }
 
-/* Pseudo-element untuk garis animasi di atas jam dan tanggal */
-.vir-datetime-container::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 3px;
-    width: 0;
-    background: linear-gradient(
-        90deg,
-        var(--vir-link),
-        var(--vir-accent),
-        var(--vir-text)
-    );
-    transition: width 0.7s ease-in-out;
-}
-
-/* Pseudo-element untuk garis animasi di bawah jam dan tanggal */
-.vir-datetime-container::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    height: 3px;
-    width: 0;
-    background: linear-gradient(
-        90deg,
-        var(--vir-link),
-        var(--vir-accent),
-        var(--vir-text)
-    );
-    transition: width 0.7s ease-in-out;
-}
-
-/* Aturan ketika sidebar aktif (memicu animasi) */
-.vir-sidebar.active .vir-sidebar-footer::before,
-.vir-sidebar.active .vir-datetime-container::before,
-.vir-sidebar.active .vir-datetime-container::after {
-    width: 100%; /* Garis akan bergerak dari 0% ke 100% */
-}
-
-/* Kode lainnya tetap sama */
 .vir-datetime-container:hover {
     transform: scale(1.05);
 }
@@ -548,86 +684,242 @@ button {
     transition: color 0.3s ease;
 }
 
-
-/* =======================================
-   ======= GARIS PEMISAH DENGAN ANIMASI ===
-   ======================================= */
-.vir-sidebar ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    flex-grow: 1;
-    padding-top: 1rem; /* Jarak di atas garis */
-    position: relative; /* Penting untuk positioning pseudo-element */
-}
-
-/* Pseudo-element untuk garis animasi */
-.vir-sidebar ul::before {
-    content: '';
-    position: absolute;
-    top: 0; /* Posisikan di bagian atas daftar menu */
+/* =======================================================
+   ============== MODAL POP-UP STYLES ====================
+   ======================================================= */
+.vir-lapis-modal {
+    position: fixed;
+    top: 0;
     left: 0;
-    height: 3px; /* Ketebalan garis */
-    width: 0; /* Dimulai dengan lebar 0 */
-    background: linear-gradient(
-        90deg,
-        var(--vir-link),
-        var(--vir-accent),
-        var(--vir-text)
-    );
-    transition: width 0.7s ease-in-out; /* Animasi selama 0.7 detik */
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
-/* Aturan ketika sidebar aktif (memicu animasi) */
-.vir-sidebar.active ul::before {
-    width: 100%; /* Garis akan bergerak dari 0% ke 100% */
+.vir-lapis-modal.active {
+    opacity: 1;
+    visibility: visible;
 }
 
-/* =======================================
-   ========== RESPONSIVITAS ============
-   ======================================= */
+.vir-isi-modal {
+    background: var(--vir-card-bg);
+    padding: 2rem;
+    border-radius: 15px;
+    max-width: 400px;
+    width: 90%;
+    position: relative;
+    transform: scale(0.95);
+    transition: transform 0.3s ease;
+    box-shadow: 0 10px 30px var(--vir-shadow-light);
+    border: 4px solid transparent;
+    background-clip: padding-box;
+    animation: vir-jendela-animasi 5s infinite;
+    color: var(--vir-text);
+    max-height: 90vh;
+    overflow-y: auto;
+}
 
-/* Aturan untuk desktop */
-@media (min-width: 769px) {
-    /* Menghapus aturan "left: 0" yang memaksa sidebar terbuka.
-       Sekarang sidebar hanya akan terbuka jika ada kelas "active"
-       yang ditambahkan oleh JavaScript Anda.
-    */
-    
-    /* Geser konten utama saat sidebar terbuka */
-    body.sidebar-active {
-        margin-left: 250px;
+.vir-lapis-modal.active .vir-isi-modal {
+    transform: scale(1);
+}
+
+@keyframes vir-jendela-animasi {
+    0% { border-color: #007bff; }
+    25% { border-color: #ff5722; }
+    50% { border-color: #4caf50; }
+    75% { border-color: #2196f3; }
+    100% { border-color: #007bff; }
+}
+
+.vir-kepala-modal {
+    display: flex;
+    flex-direction: column; /* Mengubah layout menjadi kolom */
+    align-items: center;
+    text-align: center;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    position: relative;
+    border-bottom: 1px solid transparent;
+    animation: vir-jendela-animasi 5s infinite;
+}
+
+.vir-kepala-modal h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: var(--vir-text);
+}
+
+.vir-kartu-profil {
+    text-align: center;
+}
+
+.vir-foto-profil {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    transform: scale(0.95);
+    transition: transform 0.3s ease;
+    box-shadow: 0 10px 30px var(--vir-shadow-light);
+    border: 4px solid transparent;
+    animation: vir-jendela-animasi 5s infinite;
+}
+
+.vir-nama-profil {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.vir-keterangan-profil,
+.vir-status-profil {
+  font-size: 0.9rem;
+  color: var(--vir-text);
+  padding: 1rem 0; /* Merapikan padding */
+  border-top: 1px solid transparent;
+  animation: vir-jendela-animasi 5s infinite;
+  overflow: hidden;
+}
+
+.vir-aksi-modal {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.vir-tombol-masuk, .vir-tombol-keluar, .vir-tombol-daftar {
+    padding: 0.75rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.vir-tombol-masuk, .vir-tombol-keluar {
+    background-color: var(--vir-primary);
+    color: white;
+}
+
+.vir-tombol-daftar {
+    background-color: var(--vir-card-bg);
+    color: var(--vir-text);
+    border: 1px solid var(--vir-border-color);
+}
+
+.vir-tombol-masuk:hover, .vir-tombol-daftar:hover, .vir-tombol-keluar:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px var(--vir-shadow-light);
+}
+
+.vir-ikon-sosial-modal {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 15px;
+    margin-bottom: 2rem;
+}
+
+.vir-ikon-sosial-modal a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--vir-card-bg);
+    color: var(--vir-link);
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.vir-ikon-sosial-modal a:hover {
+    background-color: var(--vir-accent);
+    color: white;
+    transform: scale(1.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.vir-ikon-sosial-modal a i svg {
+    width: 24px;
+    height: 24px;
+    stroke: var(--vir-link);
+    transition: stroke 0.3s ease-in-out;
+}
+
+.vir-ikon-sosial-modal a:hover i svg {
+    stroke: var(--vir-text);
+}
+
+.vir-detail-profil {
+    font-size: 0.9em;
+    color: var(--vir-text);
+    margin: 5px 0;
+}
+
+/* =======================================================
+   =========== MEDIA QUERIES (RESPONSIVITAS) =============
+   ======================================================= */
+/* Untuk layar desktop dan laptop (min-width: 992px) */
+@media (min-width: 992px) {
+    .vir-sidebar {
+        width: 300px;
+    }
+    .sidebar-header .vir-icon-btn {
+        display: none;
     }
 }
 
-/* Atur tag <i> di dalam menu sidebar */
-.vir-sidebar a i {
-    width: 24px;
-    height: 24px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    margin-right: 15px; /* Jarak antara ikon dan teks */
+/* Untuk layar tablet dan mobile (max-width: 991px) */
+@media (max-width: 991px) {
+    .vir-sidebar {
+        width: 80%;
+        max-width: 350px;
+    }
+    .vir-sidebar.active {
+        left: 0;
+    }
+    .sidebar-header .vir-icon-btn {
+        display: block;
+    }
 }
 
-/* Atur warna dan efek hover pada ikon Lucide di menu sidebar */
-.vir-sidebar a i svg {
-    stroke: var(--vir-link); /* Warna default */
-    transition: stroke 0.2s;
-}
-.vir-sidebar a:hover i svg {
-    stroke: var(--vir-accent); /* Warna saat hover */
+/* =======================================================
+   ======== GAYA SCROLLBAR MODERN (LANJUTAN) =============
+   ======================================================= */
+::-webkit-scrollbar {
+  width: 8px;
 }
 
+::-webkit-scrollbar-track {
+  background: var(--vir-bg);
+  border-radius: 10px;
+}
 
+::-webkit-scrollbar-thumb {
+  background: var(--vir-link);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--vir-accent);
+}
 
 /* ======================================= */
 /* ========= REUSABLE NEUMORPHISM STYLE ============= */
 /* ======================================= */
 .vir-neumorphism-card {
-    background-color: #1a1a1a;
-    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.4), -10px -10px 20px rgba(45, 45, 45, 0.2);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: var(--vir-card-bg);
+    box-shadow: 10px 10px 20px var(--vir-shadow-light), -10px -10px 20px var(--vir-shadow-dark);
+    border: 1px solid var(--vir-border-color);
     border-radius: 15px;
     padding: 20px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -635,11 +927,11 @@ button {
 
 .vir-neumorphism-card:hover {
     transform: translateY(-5px);
-    box-shadow: 15px 15px 30px rgba(0, 0, 0, 0.5), -15px -15px 30px rgba(45, 45, 45, 0.3);
+    box-shadow: 15px 15px 30px var(--vir-shadow-dark), -15px -15px 30px var(--vir-shadow-light);
 }
 
 /* ======================================= */
-/* ====== HERO LANDING PAGE (REVISI) ===== */
+/* ====== HERO LANDING PAGE (FINAL) ====== */
 /* ======================================= */
 .vir-hero-landing-page {
     position: relative;
@@ -647,9 +939,9 @@ button {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: calc(100vh - 70px);
+    min-height: 100vh; /* Menggunakan 100vh untuk mengisi seluruh layar */
     text-align: center;
-    color: #ffffff;
+    color: var(--vir-text);
     overflow: hidden;
 }
 
@@ -663,6 +955,7 @@ button {
     object-position: center;
     z-index: 1;
     animation: zoomOut 20s ease-in-out infinite;
+    will-change: transform; /* Memberi tahu browser untuk mengoptimalkan animasi */
 }
 
 .vir-hero-landing-page::before {
@@ -672,7 +965,7 @@ button {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.4); /* Menggunakan alpha untuk opacity */
     z-index: 2;
 }
 
@@ -680,23 +973,21 @@ button {
     position: relative;
     z-index: 3;
     max-width: 800px;
-    padding: 40px;
+    padding: clamp(20px, 5vw, 40px); /* Padding responsif */
     border-radius: 20px;
-    background-color: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    background-color: rgba(255,255,255,0.10);
+    backdrop-filter: blur(8px); /* Meningkatkan blur untuk efek yang lebih kuat */
+    -webkit-backdrop-filter: blur(8px);
+    box-shadow: 0 8px 32px var(--vir-shadow-light);
     animation: fadeIn 1.5s ease-out;
 }
-
-/* Ganti kode ini di style.css Anda */
 .vir-hero-welcome {
     font-family: 'Plus Jakarta Sans', sans-serif;
     font-size: clamp(2.5rem, 6vw, 4.5rem);
     font-weight: 700;
     margin-bottom: 1rem;
-    color: #fff; /* Warna teks diubah menjadi putih */
-    text-shadow: none; /* Hapus bayangan teks agar lebih bersih */
+    color: #fff; /* Mengubah warna teks menjadi putih */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Meningkatkan kepekatan bayangan */
 }
 
 .vir-hero-deskripsi-singkat {
@@ -704,10 +995,12 @@ button {
     font-size: clamp(1rem, 2.5vw, 1.25rem);
     line-height: 1.6;
     margin-bottom: 2rem;
-    color: #fff; /* Pastikan warna teks deskripsi juga putih */
+    color: #fff; /* Mengubah warna teks menjadi putih */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8); /* Meningkatkan kepekatan bayangan */
 }
 
-/* Pastikan juga kode untuk tombol di bawah ini sudah ada */
+
+
 .vir-hero-buttons {
     display: flex;
     justify-content: center;
@@ -715,15 +1008,7 @@ button {
     flex-wrap: wrap;
 }
 
-
-.vir-hero-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    flex-wrap: wrap;
-}
-
-.vir-btn-utama {
+.vir-btn-hero {
     display: inline-block;
     padding: 0.8rem 2rem;
     border-radius: 50px;
@@ -733,7 +1018,7 @@ button {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
-.vir-btn-utama:hover {
+.vir-btn-hero:hover {
     transform: translateY(-3px);
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
@@ -748,18 +1033,8 @@ button {
     color: #1a1a1a;
 }
 
-/* Menambahkan transisi pada tombol hero */
-.vir-hero-button {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.vir-hero-button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
 /* ======================================= */
-/* ========= KEYFRAMES & RESPONSIVE ====== */
+/* ====== KEYFRAMES & RESPONSIVE ========= */
 /* ======================================= */
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(20px); }
@@ -772,20 +1047,50 @@ button {
     100% { transform: scale(1); }
 }
 
-/* Penyesuaian untuk desktop */
-@media (min-width: 769px) {
-    .vir-hero-landing-page {
-        padding: 80px 20px;
-    }
+/* Penyesuaian responsif */
+@media (min-width: 768px) {
     .vir-hero-landing-content {
         padding: 50px;
     }
 }
 
-@media (min-width: 769px) {
-    .vir-hero-buttons {
-        flex-direction: row; /* Mengubah tombol menjadi horizontal */
-    }
+/* ======================================= */
+/* ========== PROFILE CARD ============= */
+/* ======================================= */
+.vir-team-profile-card {
+    background-color: var(--vir-card-bg);
+    box-shadow: 0 10px 20px var(--vir-shadow-light);
+    border-radius: 15px;
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.vir-team-profile-card:hover {
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); 
+    background-color: var(--vir-card-hover-bg);
+}
+
+.vir-profile-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; /* Pastikan ini ada dan diatur ke 50% */
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 3px solid var(--vir-card-bg);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+/* Ganti kode .vir-team-profile-card:hover dengan ini */
+.vir-team-profile-card:hover {
+    transform: scale(1.05); /* Membesar 5% */
+    box-shadow: 0 10px 20px rgba(0, 123, 255, 0.3); /* Contoh bayangan berwarna biru lembut */
+    background-color: var(--vir-card-hover-bg); 
 }
 
 
@@ -793,102 +1098,65 @@ button {
 /* ========== TEAM SECTION STYLES ======= */
 /* ======================================= */
 .vir-kartu-tim {
-    padding: 80px 20px;
+    padding: clamp(40px, 8vw, 80px) 20px;
     text-align: center;
-    padding-bottom: 80px;
 }
 
 /* ======================================= */
 /* ========= ANIMASI GANTI WARNA BORDER ========= */
 /* ======================================= */
 @keyframes vir-color-change {
-    0% {
-        border-color: var(--vir-primary);
-    }
-    33% {
-        border-color: #ff5722; /* Contoh warna oranye */
-    }
-    66% {
-        border-color: #4caf50; /* Contoh warna hijau */
-    }
-    100% {
-        border-color: var(--vir-primary);
-    }
-}
-
-/* ======================================= */
-/* === GANTI KODE INI DENGAN YANG LAMA === */
-/* ======================================= */
-.vir-team-title-2 {
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 10px;
-    color: var(--vir-text);
-    
-    /* --- Kode untuk animasi border --- */
-    border-bottom: 4px solid var(--vir-primary);
-    animation: vir-color-change 5s infinite ease-in-out;
+    0% { border-color: var(--vir-primary); }
+    33% { border-color: #ff5722; }
+    66% { border-color: #4caf50; }
+    100% { border-color: var(--vir-primary); }
 }
 
 /* Animasi Garis Memanjang saat Memuat */
 @keyframes vir-extend-border {
-    from {
-        width: 0;
-    }
-    to {
-        width: 100%;
-    }
+    from { width: 0; }
+    to { width: 100%; }
 }
 
+/* ======================================= */
+/* ========= TEAM HEADER & GRID ========= */
+/* ======================================= */
+.vir-team-title-2 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: clamp(2rem, 5vw, 2.5rem);
+    font-weight: 700;
+    margin: 0 auto 10px;
+    color: var(--vir-text);
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.vir-team-title-2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 3px;
+    width: 80%;
+    background-color: transparent;
+    border-bottom: 3px solid transparent;
+    animation: vir-color-change 5s infinite ease-in-out;
+}
 
 .vir-team-slogan-2 {
     font-family: 'Inter', sans-serif;
-    font-size: 1rem;
+    font-size: clamp(0.9rem, 2vw, 1rem);
     color: var(--vir-text);
     margin-bottom: 50px;
 }
 
 .vir-team-grid-2 {
     display: grid;
-    grid-template-columns: 1fr;
-    gap: 40px;
-    max-width: 900px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: clamp(20px, 4vw, 40px);
+    max-width: 1200px;
     margin: 0 auto;
-}
-
-@media (min-width: 768px) {
-    .vir-team-grid-2 {
-        grid-template-columns: 1fr 1fr;
-    }
-}
-
-.vir-team-profile-card {
-    background-color: var(--vir-card-bg);
-    box-shadow: 0 10px 20px var(--vir-shadow);
-    border-radius: 15px;
-    padding: 20px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.vir-tim-card:hover {
-    transform: translateY(-5px); /* Kartu naik sedikit saat di-hover */
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Bayangan menjadi lebih jelas */
-}
-
-
-.vir-profile-photo {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 20px;
-    border: 3px solid var(--vir-card-bg);
-    transition: transform 0.3s ease;
-}
-
-.vir-team-profile-card:hover .vir-profile-photo {
-    transform: scale(1.05);
 }
 
 .vir-profile-name {
@@ -930,79 +1198,247 @@ button {
     border-radius: 50%;
     color: var(--vir-text);
     font-size: 1.2rem;
-    transition: transform 0.2s, background-color 0.2s;
-    box-shadow: 0 5px 10px var(--vir-shadow);
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 5px 10px var(--vir-shadow-light);
 }
 
 .vir-social-icon:hover {
     background-color: var(--vir-primary);
     color: #fff;
-    transform: scale(1.1);
-    box-shadow: 0 8px 15px var(--vir-shadow);
+    transform: scale(1.2);
+    box-shadow: 0 8px 15px var(--vir-shadow-dark);
 }
-/* ======================================= */
-/* ======== SPONSOR SECTION STYLES ======= */
-/* ======================================= */
-.vir-sponsor-section {
-    padding: 80px 20px;
+
+/* =======================================
+   ====== IKLAN GAYA ADSENSE (FINAL) ======
+   ======================================= */
+
+/* Animasi Saat Memuat Halaman */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animasi Border Judul */
+@keyframes vir-color-change {
+    0% {
+        border-color: var(--vir-primary);
+    }
+    33% {
+        border-color: #ff5722; 
+    }
+    66% {
+        border-color: #4caf50;
+    }
+    100% {
+        border-color: var(--vir-primary);
+    }
+}
+
+.vir-adsense-section {
+    padding: clamp(4rem, 8vw, 6rem) 20px; /* Padding responsif */
+    text-align: center;
+    animation: fadeInUp 1s ease-out forwards; /* Animasi saat halaman dimuat */
+    opacity: 0;
+}
+
+.vir-adsense-title {
+    font-size: clamp(2rem, 5vw, 2.5rem); /* Ukuran font responsif */
+    font-weight: 700;
+    color: var(--vir-text);
+    margin-bottom: 2rem;
+    position: relative;
+    display: inline-block; /* Agar border bisa memanjang sesuai lebar teks */
+    padding-bottom: 15px; /* Memberi ruang untuk animasi border */
+}
+
+/* Garis bawah animasi judul */
+.vir-adsense-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%; /* Membuat border memanjang selebar judul */
+    height: 3px;
+    border-bottom: 3px solid transparent; /* Border awal transparan */
+    animation: vir-color-change 5s infinite ease-in-out; /* Animasi warna */
+}
+
+.vir-adsense-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: clamp(1.5rem, 3vw, 2rem);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.vir-adsense-card {
+    background-color: var(--vir-card-bg);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px var(--vir-shadow);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Animasi tambahan pada hover */
+.vir-adsense-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px var(--vir-shadow-hover);
+}
+
+.vir-adsense-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    background-color: var(--vir-border);
+}
+
+.vir-adsense-label {
+    font-size: 0.8rem;
+    color: var(--vir-text-secondary);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.vir-adsense-more {
+    color: var(--vir-link);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.vir-adsense-more:hover {
+    color: var(--vir-accent);
+}
+
+.vir-adsense-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.vir-adsense-content {
+    padding: 1.5rem;
+    flex-grow: 1;
+}
+
+.vir-adsense-promo-title {
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+    color: var(--vir-text);
+    margin: 0 0 0.5rem 0;
+}
+
+.vir-adsense-promo-text {
+    font-size: clamp(0.9rem, 2vw, 1rem);
+    color: var(--vir-text-secondary);
+    margin: 0;
+}
+
+.vir-adsense-btn {
+    display: block;
+    width: calc(100% - 2rem);
+    margin: 1rem;
+    padding: 0.75rem;
+    background-color: var(--vir-accent);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+    font-weight: 600;
+}
+
+.vir-adsense-btn:hover {
+    background-color: var(--vir-primary);
+}
+
+/* =======================================
+   === STYLING UNTUK VARIASI IKLAN ===
+   ======================================= */
+
+/* Penyesuaian untuk atribut vir-iklanpertama */
+.vir-adsense-card[vir-iklanpertama] {
+    border: 2px solid var(--vir-accent);
+}
+
+.vir-adsense-card[vir-iklanpertama] .vir-adsense-label {
+    color: var(--vir-text);
+    font-weight: 700;
+}
+
+/* Gaya untuk Iklan Utama (Hero Ad) */
+.vir-adsense-card.hero-ad {
+    background-image: linear-gradient(135deg, var(--vir-accent), #4f46e5);
+    color: white;
+    padding: 2rem;
+    justify-content: center;
     text-align: center;
 }
 
-.vir-sponsor-title {
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    font-size: 2rem;
-    font-weight: 600;
-    margin-bottom: 40px;
-    color: var(--vir-text);
+.vir-adsense-card.hero-ad .vir-adsense-label {
+    color: white;
 }
 
-.vir-sponsor-marquee {
-    width: 100%;
-    overflow: hidden;
-    position: relative;
-    border-radius: 10px;
-    padding: 20px 0;
-    mask-image: linear-gradient(to right,
-        hsl(0 0% 0% / 0),
-        hsl(0 0% 0% / 1) 20%,
-        hsl(0 0% 0% / 1) 80%,
-        hsl(0 0% 0% / 0));
+.vir-adsense-card.hero-ad .vir-adsense-more {
+    color: white;
 }
 
-.vir-marquee-content {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    gap: 30px;
-    white-space: nowrap;
-    animation: scroll-left 30s linear infinite;
-    animation-delay: -15s;
+.vir-adsense-card.hero-ad .vir-adsense-promo-title {
+    font-size: 1.75rem;
+    color: white;
 }
 
-.vir-sponsor-logo {
-    height: 60px; /* Ukuran logo */
-    width: auto;
-    max-width: 100%;
-    filter: grayscale(100%) brightness(50%);
-    opacity: 0.5;
-    transition: filter 0.3s ease, opacity 0.3s ease;
+.vir-adsense-card.hero-ad .vir-adsense-promo-text {
+    color: rgba(255, 255, 255, 0.8);
 }
 
-.vir-sponsor-logo:hover {
-    filter: grayscale(0%) brightness(100%);
-    opacity: 1;
+.vir-adsense-card.hero-ad .vir-adsense-btn {
+    background-color: white;
+    color: var(--vir-accent);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
 }
 
-@keyframes scroll-left {
-    from {
-        transform: translateX(0);
+/* Efek hover pada tombol iklan utama */
+.vir-adsense-card.hero-ad .vir-adsense-btn:hover {
+    background-color: #f1f1f1;
+    transform: scale(1.05);
+}
+
+/* Gaya untuk Iklan Tanpa Gambar */
+.vir-adsense-card.text-only-ad {
+    justify-content: center;
+}
+
+
+/* =======================================
+   ===== MEDIA QUERIES UNTUK RESPONSIVE =====
+   ======================================= */
+
+/* Untuk layar kecil (mobile) */
+@media (max-width: 576px) {
+    .vir-adsense-title {
+        font-size: 2rem;
     }
-    to {
-        transform: translateX(-50%);
+
+    .vir-adsense-grid {
+        gap: 1.5rem;
     }
 }
 
-
+/* Untuk layar tablet */
+@media (min-width: 577px) and (max-width: 992px) {
+    .vir-adsense-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+}
 
 /* ======================================= */
 /* ========== LEGAL SECTION STYLES ======= */
@@ -1020,47 +1456,49 @@ button {
 }
 
 .vir-legal-section {
-    padding: 80px 20px;
+    padding: clamp(60px, 10vw, 80px) 20px; /* Padding responsif */
 }
 
 .vir-legal-main-card {
     background-color: var(--vir-card-bg);
-    box-shadow: 0 10px 20px var(--vir-shadow);
+    box-shadow: 0 10px 20px var(--vir-shadow-light);
     border-radius: 15px;
-    padding: 40px 20px;
+    padding: clamp(30px, 6vw, 40px) 20px; /* Padding responsif */
     max-width: 900px;
     margin: 0 auto;
     text-align: center;
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(8px); /* Meningkatkan blur untuk efek yang lebih kuat */
+    -webkit-backdrop-filter: blur(8px);
 }
 
 .vir-legal-main-title {
     font-family: 'Plus Jakarta Sans', sans-serif;
-    font-size: 2.5rem;
+    font-size: clamp(2rem, 5vw, 2.5rem); /* Ukuran font responsif */
     font-weight: 700;
     margin-bottom: 5px;
     color: var(--vir-text);
     display: inline-block;
     position: relative;
-    padding-bottom: 10px;
+    padding-bottom: 15px; /* Memberi ruang lebih untuk garis */
 }
 
 .vir-legal-main-title::after {
     content: '';
     position: absolute;
     bottom: 0;
-    left: 0;
+    left: 50%;
+    transform: translateX(-50%);
     width: 100%;
     height: 6px;
     background-color: var(--vir-primary);
     animation: vir-legal-color-change 5s infinite ease-in-out;
+    border-radius: 3px; /* Menambahkan border-radius agar garis lebih halus */
 }
 
 .vir-legal-subtitle {
     font-family: 'Inter', sans-serif;
-    font-size: 1rem;
-    color: var(--vir-text-secondary);
+    font-size: clamp(0.9rem, 2vw, 1rem); /* Ukuran font responsif */
+    color: var(--vir-text);
     margin-bottom: 30px;
 }
 
@@ -1088,9 +1526,9 @@ button {
 }
 
 .vir-tabs-buttons::-webkit-scrollbar-thumb {
-    background-color: var(--vir-text-secondary);
+    background-color: var(--vir-text);
     border-radius: 20px;
-    border: 1px solid var(--vir-footer-bg);
+    border: 1px solid var(--vir-card-bg);
 }
 
 .vir-tab-button {
@@ -1100,20 +1538,27 @@ button {
     align-items: center;
     gap: 8px;
     font-family: 'Inter', sans-serif;
-    font-size: 0.9rem;
+    font-size: clamp(0.8rem, 2vw, 0.9rem); /* Ukuran font responsif */
     font-weight: 600;
     padding: 10px 20px;
     border: none;
     border-radius: 50px;
-    background-color: var(--vir-footer-bg);
-    color: var(--vir-text-secondary);
+    background-color: var(--vir-card-bg);
+    color: var(--vir-text);
     cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: all 0.3s ease; /* Menggunakan 'all' untuk transisi lebih halus */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.vir-tab-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 
 .vir-tab-button.active {
     background-color: var(--vir-primary);
     color: #fff;
+    transform: translateY(-1px); /* Efek subtle saat aktif */
 }
 
 .vir-tab-content {
@@ -1127,7 +1572,7 @@ button {
 
 .vir-legal-title {
     font-family: 'Plus Jakarta Sans', sans-serif;
-    font-size: 1.5rem;
+    font-size: clamp(1.2rem, 3vw, 1.5rem); /* Ukuran font responsif */
     font-weight: 600;
     margin-bottom: 15px;
     color: var(--vir-text);
@@ -1137,9 +1582,8 @@ button {
     font-family: 'Inter', sans-serif;
     line-height: 1.6;
     color: var(--vir-text);
+    font-size: clamp(0.9rem, 2vw, 1rem); /* Ukuran font responsif */
 }
-
-
 
 
 /* ==================================================
@@ -1152,7 +1596,7 @@ button {
     border-radius: 8px;
     font-size: 0.95em;
     line-height: 1.5;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Efek shadow lembut */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); 
     display: flex;
     align-items: flex-start;
     gap: 1rem;
@@ -1222,36 +1666,473 @@ button {
 }
 .vir-artikel-iklan .vir-artikel-alert__icon i { color: var(--vir-artikel-iklan-border); }
 
+/* FAQ ACCORDION */
+/* Animasi untuk Border Judul */
+@keyframes vir-color-change {
+    0% { border-color: var(--vir-primary); }
+    33% { border-color: #ff5722; }
+    66% { border-color: #4caf50; }
+    100% { border-color: var(--vir-primary); }
+}
+
+/* Animasi untuk Teks Jawaban yang Muncul dari Kiri */
+@keyframes vir-slide-in {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Bagian Utama (Section) */
+.vir-faq-section {
+    padding: clamp(60px, 10vw, 80px) 20px;
+    background-color: var(--vir-section-bg);
+}
+
+/* Kontainer Utama FAQ */
+.vir-faq-container {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Gaya untuk Judul Utama (Main Title) */
+.vir-faq-main-title {
+    font-size: clamp(2rem, 5vw, 2.5rem);
+    font-weight: 700;
+    color: var(--vir-text);
+    margin-bottom: 0.5rem;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 15px; /* Memberi ruang untuk garis bawah */
+}
+
+/* Garis Bawah (Border) yang beranimasi pada Judul */
+.vir-faq-main-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    border-bottom: 3px solid transparent;
+    animation: vir-color-change 5s infinite ease-in-out;
+}
+
+/* Gaya untuk Subtitle */
+.vir-faq-subtitle {
+    font-size: clamp(0.9rem, 2vw, 1rem);
+    color: var(--vir-text-secondary);
+    margin-bottom: 3rem;
+}
+
+/* Kontainer untuk semua item Accordion */
+.vir-faq-accordion {
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Penting untuk efek transisi */
+}
+
+/* Setiap Item FAQ */
+.vir-faq-item {
+    border-bottom: 1px solid var(--vir-border);
+}
+
+/* Tombol Pertanyaan */
+.vir-faq-question {
+    width: 100%;
+    background-color: var(--vir-card-bg);
+    color: var(--vir-text);
+    padding: clamp(15px, 3vw, 20px);
+    font-size: clamp(1rem, 2.5vw, 1.1rem);
+    font-weight: 600;
+    text-align: left;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+/* Efek Hover dan Aktif pada Tombol Pertanyaan */
+.vir-faq-question:hover,
+.vir-faq-question.active {
+    background-color: var(--vir-card-hover-bg);
+}
+
+/* Ikon Plus/Minus */
+.vir-faq-icon {
+    font-size: 1.5rem;
+    font-weight: 300;
+    transition: transform 0.3s ease;
+    padding-left: 10px;
+}
+
+/* Putar Ikon saat Pertanyaan Aktif */
+.vir-faq-question.active .vir-faq-icon {
+    transform: rotate(45deg);
+}
+
+/* Kontainer Jawaban (Awalnya Tersembunyi) */
+.vir-faq-answer {
+    background-color: var(--vir-card-bg);
+    max-height: 0; /* Menyembunyikan konten dengan tinggi 0 */
+    overflow: hidden; /* Menyembunyikan konten yang meluap */
+    transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out;
+}
+
+/* Kontainer Jawaban saat Aktif (Terbuka) */
+.vir-faq-answer.active {
+    max-height: 1000px; /* Nilai besar untuk memastikan konten terlihat */
+    padding: clamp(15px, 3vw, 20px);
+}
+
+/* Teks di dalam Jawaban */
+.vir-faq-answer p {
+    padding: 0;
+    margin: 0;
+    font-size: clamp(0.9rem, 2vw, 1rem);
+    line-height: 1.6;
+    color: var(--vir-text-secondary);
+    /* Gaya awal untuk Animasi Slide */
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: opacity 0.3s ease 0.3s, transform 0.3s ease 0.3s; /* Delay 0.3s */
+    text-align: left; /* Perbaikan: Memastikan teks rata kiri */
+}
+
+/* Animasi Akhir untuk Teks saat Jawaban Aktif */
+.vir-faq-answer.active p {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/*TESTIMONI*/
+/* CSS Styling */
+/* Animasi untuk Border Judul */
+@keyframes vir-color-change {
+    0% { border-color: var(--vir-primary); }
+    33% { border-color: #ff5722; }
+    66% { border-color: #4caf50; }
+    100% { border-color: var(--vir-primary); }
+}
+
+/* Bagian Testimoni */
+.vir-testimonial-section {
+    padding: clamp(60px, 10vw, 80px) 20px;
+    background-color: var(--vir-section-bg);
+    text-align: center;
+}
+
+.vir-testimonial-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Gaya Judul Utama */
+.vir-testimonial-main-title {
+    font-size: clamp(2rem, 5vw, 2.5rem);
+    font-weight: 700;
+    color: var(--vir-text);
+    margin-bottom: 0.5rem;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 15px;
+}
+
+/* Border Animasi untuk Judul */
+.vir-testimonial-main-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    border-bottom: 3px solid transparent;
+    animation: vir-color-change 5s infinite ease-in-out;
+}
+
+.vir-testimonial-subtitle {
+    font-size: clamp(0.9rem, 2vw, 1rem);
+    color: var(--vir-text-secondary);
+    margin-bottom: 3rem;
+}
+
+/* Kontainer Slider */
+.vir-testimonial-slider-wrapper {
+    overflow: hidden;
+    width: 100%;
+}
+
+.vir-testimonial-slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.vir-testimonial-card {
+    flex-shrink: 0;
+    width: 100%;
+    padding: clamp(30px, 6vw, 40px);
+    margin: 0 10px;
+    background-color: var(--vir-card-bg);
+    border-radius: 12px;
+    box-shadow: 0 10px 20px var(--vir-shadow);
+}
+
+.vir-testimonial-text {
+    font-style: italic;
+    font-size: clamp(1rem, 2.5vw, 1.1rem);
+    color: var(--vir-text);
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.vir-testimonial-author {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.vir-author-name {
+    font-weight: 700;
+    color: var(--vir-primary);
+    margin-bottom: 0.2rem;
+}
+
+.vir-author-role {
+    font-size: 0.9rem;
+    color: var(--vir-text-secondary);
+}
+
+/* Navigasi */
+.vir-testimonial-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-top: 2rem;
+}
+
+.vir-slider-prev,
+.vir-slider-next {
+    background-color: transparent;
+    border: none;
+    font-size: 2rem;
+    color: var(--vir-text-secondary);
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.vir-slider-prev:hover,
+.vir-slider-next:hover {
+    color: var(--vir-primary);
+    transform: scale(1.2);
+}
+
+.vir-slider-dots {
+    display: flex;
+    gap: 8px;
+}
+
+.vir-dot {
+    width: 12px;
+    height: 12px;
+    background-color: var(--vir-text-secondary);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.vir-dot.active {
+    background-color: var(--vir-primary);
+}
+/* ====================================
+   === GAYA UNTUK CHANGELOG FINAL V3 ===
+   ==================================== */
+.vir-changelog-section {
+    padding: 2rem 1rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.vir-changelog-container {
+    position: relative;
+    padding: 1rem 0;
+}
+
+.vir-changelog-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 20px;
+    width: 2px;
+    height: 100%;
+    background-color: var(--vir-border-color);
+    z-index: 0;
+}
+
+.vir-changelog-item {
+    position: relative;
+    padding-left: 50px;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.vir-changelog-item::before {
+    content: '';
+    position: absolute;
+    top: 0.5rem;
+    left: 14px;
+    width: 14px;
+    height: 14px;
+    background-color: var(--vir-link);
+    border: 2px solid var(--vir-border-anim-1);
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.vir-changelog-header {
+    margin-bottom: 0.5rem;
+}
+
+.vir-changelog-date {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--vir-text-subtle);
+    margin-bottom: 0.25rem;
+}
+
+.vir-changelog-title {
+    margin: 0;
+    font-size: 1.2rem;
+    color: var(--vir-text);
+}
+
+.vir-changelog-card {
+    background-color: var(--vir-card-background);
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    box-shadow: var(--vir-shadow-md);
+    border: 1px solid var(--vir-border-color);
+}
+
+.vir-update-summary {
+    font-size: 0.95rem;
+    color: var(--vir-text-subtle);
+}
+
+.vir-update-details-toggle {
+    margin-top: 1rem;
+}
+
+.vir-toggle-details-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    color: var(--vir-link);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0;
+}
+
+.vir-update-details {
+    list-style: none;
+    padding: 0;
+    margin-top: 1rem;
+    height: 0;
+    overflow: hidden;
+    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Menggunakan kelas untuk mengontrol tampilan */
+.vir-update-details.collapsed {
+    max-height: 0;
+    opacity: 0;
+}
+
+.vir-update-details.expanded {
+    max-height: 500px; /* Nilai yang cukup besar untuk konten */
+    opacity: 1;
+}
+
+.vir-update-details li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    color: var(--vir-text-subtle);
+}
+
+.vir-update-details li i {
+    color: var(--vir-border-anim-2);
+    margin-right: 0.5rem;
+}
+
+/* Responsif untuk layar besar */
+@media (min-width: 768px) {
+    .vir-changelog-container::before {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .vir-changelog-item {
+        width: 50%;
+        padding-left: 0;
+    }
+
+    .vir-changelog-item:nth-child(even) {
+        margin-left: 50%;
+    }
+
+    .vir-changelog-item:nth-child(odd) {
+        padding-right: 50px;
+    }
+
+    .vir-changelog-item::before {
+        left: 50%;
+        transform: translateX(-50%);
+        top: 1.5rem;
+    }
+
+    .vir-changelog-card {
+        padding: 2rem;
+    }
+}
 
 /* =======================================
    ========== CSS FOOTER FINAL & LENGKAP ===========
    ======================================= */
 .vir-footer {
-  /* Atribut dasar footer Anda, tidak diubah */
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 0.5rem; /* Jarak antar setiap elemen */
+  gap: 0.5rem;
   padding: 1rem 2rem;
   font-size: 0.9rem;
-  font-family: 'Inter', sans-serif; /* Dipastikan ada */
+  font-family: 'Inter', sans-serif;
   color: var(--vir-text);
   background-color: var(--vir-card-bg);
   backdrop-filter: blur(10px);
-  box-shadow: 0 -8px 16px var(--vir-shadow);
+  box-shadow: 0 -8px 16px var(--vir-shadow-light);
   border-top: 1px solid rgba(0, 0, 0, 0.05);
   position: relative;
   z-index: 99;
   transition: background 0.3s ease, color 0.3s ease;
+  margin-top: auto;
 }
 
-/* Mengatur gaya teks tambahan di footer */
 .vir-footer span {
-  white-space: nowrap; /* Mencegah teks seperti "— 2025" terpisah */
+  white-space: nowrap;
 }
 
-/* Mengatur ikon Lucide di dalam footer */
 .vir-footer i {
   display: inline-flex;
   width: 1.2em;
@@ -1260,17 +2141,16 @@ button {
   transition: stroke 0.2s ease;
 }
 
-/* Mengatur link di dalam footer */
 .footer-link {
     text-decoration: none;
     color: var(--vir-text);
     transition: color 0.2s ease;
 }
 
-/* Efek hover untuk link dan ikon */
 .footer-link:hover {
     color: var(--vir-accent);
 }
 .footer-link:hover + i {
     stroke: var(--vir-accent);
 }
+
