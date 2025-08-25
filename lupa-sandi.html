@@ -1,0 +1,55 @@
+<!DOCTYPE html> 
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lupa Kata Sandi | Virnophas Official</title>
+    <!-- Tautkan ke file CSS untuk tampilan yang konsisten -->
+    <link rel="stylesheet" href="css/style-1.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="vir-login-page">
+    <div class="vir-auth-container">
+        <div class="vir-auth-card">
+            <div class="vir-auth-title">Lupa Kata Sandi?</div>
+            <button id="vir-theme-toggle" class="vir-theme-toggle"><i data-lucide="moon"></i></button>
+
+            <!-- Formulir utama untuk Lupa Kata Sandi -->
+            <form id="forgot-password-form" class="vir-form-container active">
+                <p class="vir-form-instruction">Masukkan email Anda. Kami akan mengirimkan tautan untuk mengatur ulang kata sandi.</p>
+
+                <div class="vir-form-group">
+                    <label for="forgot-email">Email</label>
+                    <div class="vir-input-wrapper">
+                        <i data-lucide="mail" class="vir-input-icon"></i>
+                        <input type="email" id="forgot-email" class="vir-input" placeholder="Masukkan email Anda" required>
+                    </div>
+                    <span id="forgot-email-error" class="vir-input-error-msg"></span>
+                </div>
+
+                <button type="submit" id="reset-submit-btn" class="vir-btn-submit">Kirim Tautan</button>
+            </form>
+            
+            <!-- Area pesan sukses yang awalnya disembunyikan -->
+            <div id="success-message-box" class="vir-success-message-box" style="display: none;">
+                <i data-lucide="mail-check" class="vir-icon-success"></i>
+                <div class="vir-message-text">Tautan reset telah dikirim!</div>
+                <div class="vir-message-small">Mohon periksa kotak masuk dan folder spam Anda.</div>
+            </div>
+            
+            <p class="vir-form-instruction vir-go-back" style="text-align: center; margin-top: 1.5rem;">
+                <a href="login-signup.html">Kembali ke Masuk</a>
+            </p>
+        </div>
+    </div>
+
+<div id="vir-toast" class="vir-toast"></div>
+
+    <!-- Tautkan ke skrip yang sudah diperbarui -->
+    <script type="module" src="js/script-2.js"></script>
+</body>
+</html>
+
+ -->
