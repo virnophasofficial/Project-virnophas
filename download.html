@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="id" vir-theme="light">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Unduh Konfigurasi | Virnophas Official</title>
+    
+    <meta name="description" content="Halaman unduhan konfigurasi PUBG Mobile eksklusif untuk anggota Virnophas Official." />
+    <meta name="author" content="Virnophas Official" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="css/style-dashboard.css" />
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="vir-dashboard-page">
+
+<header class="vir-navbar">
+  <div class="vir-navbar-inner">
+    <div class="vir-nav-left">
+      <h1 class="vir-judul">Virnophas Official</h1>
+    </div>
+    <div class="vir-nav-actions">
+      <button id="vir-theme-toggle" class="vir-icon-btn" aria-label="Toggle dark/light mode">
+        <i data-lucide="moon"></i>
+      </button>
+      <button id="vir-profile-btn" class="vir-icon-btn" aria-label="Open user profile">
+        <i data-lucide="user"></i>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main class="vir-main-content">
+    
+    <section class="vir-hero-section">
+        <div class="vir-hero-card">
+            <h2 class="vir-hero-title">Unduh Konfigurasi</h2>
+            <p class="vir-hero-subtitle">PUBG Mobile</p>
+            <p class="vir-hero-description">Temukan dan unduh konfigurasi terbaru yang telah kami sediakan khusus untuk Anda.</p>
+        </div>
+    </section>
+
+    <section class="vir-section">
+        <div class="vir-section-header">
+            <h3 class="vir-section-title">Daftar Konfigurasi</h3>
+        </div>
+        <div id="configs-container" class="vir-configs-container">
+            <div class="vir-loading-spinner"></div>
+        </div>
+    </section>
+
+</main>
+
+<div id="vir-profile-modal" class="vir-modal">
+    <div class="vir-modal-content">
+        <div class="vir-modal-header">
+            <h3 class="vir-modal-title">Profil Pengguna</h3>
+            <button id="vir-modal-close" class="vir-modal-close-btn" aria-label="Close modal">
+                <i data-lucide="x"></i>
+            </button>
+        </div>
+        <div class="vir-modal-body">
+            <div class="vir-profile-detail">
+                <div class="vir-profile-avatar-large">
+                    <i data-lucide="user"></i>
+                </div>
+                <h4 id="modal-display-name"></h4>
+                <p class="vir-modal-email" id="modal-email"></p>
+            </div>
+            <button id="vir-logout-btn" class="vir-btn vir-btn-logout">
+                <i data-lucide="log-out"></i> Keluar
+            </button>
+        </div>
+    </div>
+</div>
+
+<footer class="vir-footer">
+  <span>Dibuat dengan</span>
+  <i data-lucide="heart"></i>
+  <a href="#" class="footer-link">Virnophas Official</a>
+  <span>— 2025</span>
+</footer>
+
+<script type="module" src="js/download-script.js"></script>
+<script>
+    // Inisialisasi ikon Lucide
+    lucide.createIcons();
+</script>
+
+</body>
+</html>
