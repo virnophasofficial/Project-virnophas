@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="id" vir-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Halaman Changelog Virnophas Official. Temukan semua pembaruan, perbaikan, dan fitur baru yang kami rilis." />
+    <meta name="keywords" content="Virnophas Official, changelog, pembaruan, update, fitur baru" />
+    <meta name="author" content="Malgath Cargeiros" />
+    <link rel="icon" href="assets/images/images.png" type="image/png" />
+    <title>Changelog - Virnophas Official</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Plus+Jakarta+Sans:wght@400;600&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/script.js"></script>
+
+    <style>
+      :root {
+        --vir-link: #6c63ff;
+        --vir-text: #1a1a1a;
+        --vir-text-subtle: #666666;
+        --vir-border-color: #e0e0e0;
+        --vir-card-background: #f7f7f7;
+        --vir-hover-background: #e8e8e8;
+        --vir-shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+        --vir-timeline-height: 0%; /* Variabel untuk tinggi garis timeline */
+      }
+      [vir-theme="dark"] {
+        --vir-link: #6c63ff;
+        --vir-text: #ffffff;
+        --vir-text-subtle: #b0b0b0;
+        --vir-border-color: #333333;
+        --vir-card-background: #252525;
+        --vir-hover-background: #3a3a3a;
+        --vir-shadow-md: 0 4px 6px rgba(0, 0, 0, 0.2), 0 1px 3px rgba(0, 0, 0, 0.15);
+      }
+
+      /* ==================================== */
+      /* ANIMASI & EFEK KHUSUS */
+      /* ==================================== */
+      @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+
+      @keyframes slideInFromLeft {
+        from { opacity: 0; transform: translateX(-50px); }
+        to { opacity: 1; transform: translateX(0); }
+      }
+
+      @keyframes slideInFromRight {
+        from { opacity: 0; transform: translateX(50px); }
+        to { opacity: 1; transform: translateX(0); }
+      }
+
+      @keyframes flowGradient {
+          from { background-position: 0% 0%; }
+          to { background-position: 100% 100%; }
+      }
+
+      /* === Changelog Section === */
+      .vir-changelog-section {
+        padding: 2rem 1rem;
+        max-width: 900px;
+        margin: 0 auto;
+        padding-top: 80px;
+      }
+
+      /* === Judul dengan Border Statis === */
+      .vir-changelog-main-title {
+        text-align: center;
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+        position: relative;
+        padding-bottom: 1.5rem;
+      }
+      .vir-changelog-main-title::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60px;
+        height: 2px;
+        background-color: var(--vir-link);
+        border-radius: 99px;
+      }
+      .vir-changelog-subtitle {
+        text-align: center;
+        font-size: 1.1rem;
+        color: var(--vir-text-subtle);
+        margin-bottom: 2rem;
+        animation: fadeIn 1s ease-out;
+      }
+
+      /* === Garis Timeline === */
+      .vir-changelog-container {
+        position: relative;
+        padding: 1rem 0;
+      }
+      .vir-changelog-container::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 20px;
+        width: 2px;
+        background: linear-gradient(to top, #6c63ff, #00bcd4, #ffc107, #f44336);
+        background-size: 100% 400%;
+        animation: flowGradient 6s linear infinite;
+        z-index: 0;
+        transition: height 0.3s ease-out;
+        height: var(--vir-timeline-height); /* Menggunakan variabel yang diatur oleh JS */
+      }
+      .vir-changelog-item {
+        position: relative;
+        padding-left: 50px;
+        margin-bottom: 3rem;
+        display: flex;
+        flex-direction: column;
+        opacity: 0;
+        transform: translateX(0);
+        transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.6s ease-out;
+      }
+      .vir-changelog-item.animated-left {
+        animation: slideInFromLeft 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+      }
+      .vir-changelog-item.animated-right {
+        animation: slideInFromRight 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+      }
+      .vir-changelog-item::before {
+        content: '';
+        position: absolute;
+        top: 0.5rem;
+        left: 14px;
+        width: 14px;
+        height: 14px;
+        background-color: var(--vir-link);
+        border: 2px solid var(--vir-link);
+        border-radius: 50%;
+        z-index: 1;
+        transition: transform 0.3s ease;
+      }
+      .vir-changelog-item:hover::before {
+        transform: scale(1.5);
+      }
+      
+      /* === Kartu Changelog === */
+      .vir-changelog-card {
+        background-color: var(--vir-card-background);
+        padding: 1.5rem;
+        border-radius: 0.75rem;
+        box-shadow: var(--vir-shadow-md);
+        border: 1px solid var(--vir-border-color);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .vir-changelog-card:hover {
+        transform: translateY(-5px) rotate(-1deg);
+        box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+      }
+      .vir-update-details.hidden {
+        max-height: 0;
+        opacity: 0;
+      }
+      .vir-update-details.show {
+        max-height: 500px;
+        opacity: 1;
+      }
+
+      /* Responsif untuk Layar Lebar */
+      @media (min-width: 768px) {
+        .vir-changelog-container::before {
+          left: 50%;
+          transform: translateX(-50%);
+        }
+        .vir-changelog-item {
+          width: 50%;
+          padding-left: 0;
+          margin-bottom: 4rem;
+        }
+        .vir-changelog-item:nth-child(even) {
+          margin-left: 50%;
+        }
+        .vir-changelog-item:nth-child(odd) {
+          padding-right: 50px;
+          text-align: right;
+        }
+        .vir-changelog-item:nth-child(odd) .vir-changelog-card {
+          text-align: left;
+        }
+        .vir-changelog-item:nth-child(even) .vir-changelog-card {
+            margin-left: -50px;
+        }
+        .vir-changelog-item::before {
+          left: 50%;
+          transform: translateX(-50%);
+          top: 1.5rem;
+        }
+        .vir-changelog-card {
+          padding: 2rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+
+    <header class="vir-navbar">
+      <div class="vir-nav-left">
+        <h1 class="vir-judul">Virnophas Official</h1>
+      </div>
+      <div class="vir-nav-actions">
+        <button id="vir-notification-bell" class="vir-icon-btn" aria-label="Notifikasi">
+          <i data-lucide="bell" class="vir-icon"></i>
+          <span id="vir-notification-badge" class="vir-notification-badge"></span>
+        </button>
+        <div id="vir-notification-dropdown" class="vir-notification-dropdown">
+          <div class="vir-notification-header">
+            <h4 class="vir-dropdown-title">Pemberitahuan</h4>
+          </div>
+          <div id="vir-notification-list" class="vir-notification-list">
+            <p class="vir-placeholder-text">Tidak ada notifikasi baru.</p>
+          </div>
+          <div class="vir-notification-footer">
+            <a href="#" id="vir-dropdown-footer" class="vir-dropdown-footer">Lihat Semua</a>
+          </div>
+        </div>
+        <button id="vir-toggle-theme" aria-label="Toggle Theme">
+          <i id="vir-theme-icon" data-lucide="sun"></i>
+        </button>
+        <button id="vir-toggle-menu" aria-label="Toggle Menu Sidebar">
+          <i id="vir-menu-icon" data-lucide="menu"></i>
+        </button>
+      </div>
+    </header>
+
+    <nav id="vir-sidebar" class="vir-sidebar" aria-label="Navigasi Sidebar">
+        <div class="sidebar-header">
+            <div class="vir-header-controls">
+                <button id="vir-profile-btn" aria-label="Buka Profil" class="vir-icon-btn">
+                    <i id="vir-profile-icon" data-lucide="user"></i>
+                </button>
+                <button id="vir-close-sidebar" aria-label="Tutup Sidebar" class="vir-icon-btn">
+                    <i id="vir-close-icon" data-lucide="x"></i>
+                </button>
+            </div>
+        </div>
+        
+        <ul class="vir-sidebar-menu">
+            <li><a href="index.html"><i data-lucide="home"></i> <span>Beranda</span></a></li>
+            <li><a href="index-changelog.html"><i data-lucide="git-commit"></i> <span>Changelog</span></a></li>
+            <li><a href="index.html#tim-kami"><i data-lucide="users"></i> <span>Tim Kami</span></a></li>
+            <li><a href="index.html#faq"><i data-lucide="help-circle"></i> <span>FAQ</span></a></li>
+            <li><a href="index.html#legal"><i data-lucide="gavel"></i> <span>Legal</span></a></li>
+        </ul>
+
+        <div class="vir-social-icons">
+            <a href="https://youtube.com/@virnophasgaming?si=h4MNpgg7EzVhf-QV" class="youtube"><i data-lucide="youtube"></i></a>
+            <a href="https://t.me/VirnophasOriginal" class="boxes"><i data-lucide="boxes"></i></a>
+            <a href="https://saweria.co/Virnophas" class="hand-coins"><i data-lucide="hand-coins"></i></a>
+        </div>
+
+        <div class="vir-sidebar-footer">
+            <div class="vir-datetime-container">
+                <div id="vir-time"></div>
+                <div id="vir-date"></div>
+            </div>
+        </div>
+    </nav>
+
+    <div id="vir-jendela-profil" class="vir-lapis-modal">
+        <div class="vir-isi-modal vir-kartu-timbul">
+            <div class="vir-kepala-modal">
+                <h3 id="vir-judul-modal">Profil Pengguna</h3>
+                <button id="vir-tombol-tutup" aria-label="Tutup Modal" class="vir-tombol-ikon">
+                    <i data-lucide="x"></i>
+                </button>
+            </div>
+            
+            <div id="vir-tamu-profil" class="vir-kartu-profil">
+                <img src="assets/images/profil.jpg" alt="Virnophas Official Avatar" class="vir-foto-profil">
+                <h4 class="vir-nama-profil">Virnophas Official</h4>
+                <p class="vir-keterangan-profil">
+                  Penyedia layanan dan konten eksklusif
+                </p> <p class="vir-status-profil">Anda belum login.</p>
+                <div class="vir-ikon-sosial-modal">
+                    <a href="#" aria-label="Facebook"><i data-lucide="facebook"></i></a>
+                    <a href="https://x.com/Cargeiros" aria-label="Twitter"><i data-lucide="twitter"></i></a>
+                    <a href="https://t.me/AerithMeridithasBOT" aria-label="handshake"><i data-lucide="handshake"></i></a>
+                    <a href="https://www.youtube.com/@VirnophasX" aria-label="YouTube"><i data-lucide="youtube"></i></a>
+                </div> <div class="vir-aksi-modal">
+                    <a href="login-signup.html" class="vir-tombol-masuk">Login</a>
+                    <a href="login-signup.html" class="vir-tombol-daftar">Daftar</a>
+                </div>
+            </div>
+            
+            <div id="vir-pengguna-profil" class="vir-kartu-profil" style="display: none;">
+                <img id="vir-avatar-pengguna" src="assets/images/user-default.jpg" alt="User Avatar" class="vir-foto-profil">
+                <h4 id="vir-nama-pengguna" class="vir-nama-profil">Nama Pengguna</h4>
+                <p id="vir-email-pengguna" class="vir-status-profil">email@example.com</p>
+                <div class="vir-aksi-modal">
+                    <button id="vir-tombol-keluar" class="vir-tombol-keluar">Logout</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <main class="vir-main-content">
+        <section class="vir-changelog-section">
+            <h2 class="vir-changelog-main-title">Pembaruan & Changelog</h2>
+            <p class="vir-changelog-subtitle">Daftar semua perubahan, perbaikan, dan fitur baru yang telah kami rilis.</p>
+
+            <div class="vir-changelog-container">
+
+                <div class="vir-changelog-item">
+                    <div class="vir-changelog-header">
+                        <span class="vir-changelog-date">13 Agustus - 25 Agustus 2025</span>
+                        <h3 class="vir-changelog-title">Pembaruan Versi 1.2 (Integrasi Supabase & Finalisasi)</h3>
+                    </div>
+                    <div class="vir-changelog-card">
+                        <p class="vir-update-summary">**Mohon maaf atas ketidakaktifan saya di grup/channel.** Periode ini adalah fase pengerjaan paling intensif. Fokus total diberikan pada implementasi **sistem otentikasi penuh dengan Supabase**, validasi keamanan, dan penyelesaian seluruh alur pengguna. Kerja keras ini menghasilkan sistem Login, Daftar, dan Dashboard yang aman.</p>
+                        <div class="vir-update-details-toggle">
+                            <button class="vir-toggle-details-btn"><i data-lucide="plus"></i> Lihat Detail</button>
+                            <ul class="vir-update-details hidden">
+                                <li><i data-lucide="lock"></i> **Sistem Autentikasi Penuh:** Integrasi *backend* **Supabase** untuk Login, Pendaftaran, dan Reset Kata Sandi.</li>
+                                <li><i data-lucide="shield"></i> **Pengamanan Halaman:** Halaman **Dashboard** dan **Unduh** kini dilindungi otentikasi, memastikan hanya anggota terdaftar yang memiliki akses.</li>
+                                <li><i data-lucide="list-checks"></i> **UX Login & Daftar:** Validasi *real-time* kata sandi yang ketat dan *cooldown* 60 detik pada permintaan reset sandi (untuk mencegah *spam*).</li>
+                                <li><i data-lucide="layers-3"></i> **Refaktor Kode:** Seluruh logika *frontend* dipecah menjadi file-file modular (`auth.js`, `script-2.js`, dll.) untuk mempermudah pemeliharaan jangka panjang.</li>
+                                <li><i data-lucide="check-circle"></i> **Penyelesaian Akhir:** Melakukan perbaikan koneksi *frontend-backend* pada semua formulir dan menguji alur pengguna secara menyeluruh.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="vir-changelog-item">
+                    <div class="vir-changelog-header">
+                        <span class="vir-changelog-date">12 Agustus 2025</span>
+                        <h3 class="vir-changelog-title">Pembaruan Versi 1.1 (Peningkatan Arsitektur & Tampilan)</h3>
+                    </div>
+                    <div class="vir-changelog-card">
+                        <p class="vir-update-summary">Fokus pada **kualitas kode dan tampilan**, termasuk perbaikan *bug* *sidebar*. Peningkatan ini memerlukan fokus penuh pada detail arsitektur yang membuat saya tidak dapat berinteraksi secara aktif. </p>
+                        <div class="vir-update-details-toggle">
+                            <button class="vir-toggle-details-btn"><i data-lucide="plus"></i> Lihat Detail</button>
+                            <ul class="vir-update-details hidden">
+                                <li><i data-lucide="columns"></i> **Struktur Semantik:** Pembaruan penuh pada HTML untuk **peningkatan SEO** dan aksesibilitas.</li>
+                                <li><i data-lucide="palette"></i> **Desain Soft UI:** Menerapkan gaya visual modern dengan efek **Frosted Glass** dan animasi halus.</li>
+                                <li><i data-lucide="code"></i> **Optimasi Performa:** Menggunakan **SVG Ikon Mandiri** untuk menghilangkan ketergantungan CDN eksternal.</li>
+                                <li><i data-lucide="menu"></i> **Sidebar Fungsional:** Menambahkan sidebar navigasi interaktif dengan informasi tim dan **Jam Real-time**.</li>
+                                <li><i data-lucide="file-text"></i> **Sistem Tab Legal:** Implementasi sistem tab untuk Kebijakan & Ketentuan Resmi.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="vir-changelog-item">
+                    <div class="vir-changelog-header">
+                        <span class="vir-changelog-date">29 Juli - 10 Agustus 2025</span>
+                        <h3 class="vir-changelog-title">Pembaruan Versi 1.0 (Peluncuran Awal)</h3>
+                    </div>
+                    <div class="vir-changelog-card">
+                        <p class="vir-update-summary">Fase perencanaan awal, *setup* infrastruktur, dan peluncuran resmi website. Periode ini adalah waktu krusial untuk membangun fondasi, sehingga mengharuskan saya fokus penuh dan mengurangi interaksi di luar. </p>
+                        <div class="vir-update-details-toggle">
+                            <button class="vir-toggle-details-btn"><i data-lucide="plus"></i> Lihat Detail</button>
+                            <ul class="vir-update-details hidden">
+                                <li><i data-lucide="activity"></i> **Perencanaan:** Perumusan konsep, desain tampilan awal, dan penentuan arsitektur sistem.</li>
+                                <li><i data-lucide="git-branch"></i> **Setup Infrastruktur:** Membuat repositori di **GitHub** dan mengkonfigurasi *hosting* di **Netlify**.</li>
+                                <li><i data-lucide="globe"></i> **Peluncuran Resmi:** Website Virnophas Official resmi di-*deploy* ke publik (Go-Live pada 5 Agustus).</li>
+                                <li><i data-lucide="sun-moon"></i> **Fitur Tema Dasar:** Implementasi dasar fitur tema terang dan gelap.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <footer class="vir-footer">
+      <span>Dibuat oleh</span>
+      <i data-lucide="heart"></i>
+      <a href="#" class="footer-link">Virnophas Official</a>
+      <span>— 2025</span>
+    </footer>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+          // === TOGGLE "LIHAT DETAIL" PADA CHANGELOG ===
+          const toggleButtons = document.querySelectorAll('.vir-toggle-details-btn');
+          toggleButtons.forEach(button => {
+              button.addEventListener('click', function() {
+                  const detailsList = this.nextElementSibling;
+                  const isHidden = detailsList.classList.contains('hidden');
+
+                  if (isHidden) {
+                      detailsList.classList.remove('hidden');
+                      detailsList.classList.add('show');
+                      this.innerHTML = `<i data-lucide="minus"></i> Sembunyikan Detail`;
+                  } else {
+                      detailsList.classList.remove('show');
+                      detailsList.classList.add('hidden');
+                      this.innerHTML = `<i data-lucide="plus"></i> Lihat Detail`;
+                  }
+                  lucide.createIcons();
+              });
+          });
+
+          // === Animasi Scroll & Kartu ===
+          const changelogContainer = document.querySelector('.vir-changelog-container');
+          const changelogTimeline = document.querySelector('.vir-changelog-container');
+          const changelogItems = document.querySelectorAll('.vir-changelog-item');
+
+          // Observer untuk animasi item/kartu saat masuk viewport
+          const observer = new IntersectionObserver((entries) => {
+              entries.forEach((entry) => {
+                  if (entry.isIntersecting) {
+                      const itemIndex = Array.from(changelogItems).indexOf(entry.target);
+                      if (itemIndex % 2 === 0) {
+                          entry.target.classList.add('animated-right');
+                      } else {
+                          entry.target.classList.add('animated-left');
+                      }
+                      observer.unobserve(entry.target);
+                  }
+              });
+          }, { threshold: 0.1 });
+
+          changelogItems.forEach(item => {
+              observer.observe(item);
+          });
+
+          // Event listener untuk animasi garis timeline saat scroll
+          window.addEventListener('scroll', () => {
+              const containerTop = changelogTimeline.getBoundingClientRect().top;
+              const containerHeight = changelogTimeline.clientHeight;
+              const scrollPosition = window.innerHeight - containerTop;
+
+              if (scrollPosition > 0) {
+                  const progress = Math.min(scrollPosition / containerHeight, 1) * 100;
+                  document.documentElement.style.setProperty('--vir-timeline-height', `${progress}%`);
+              }
+          });
+
+          lucide.createIcons();
+      });
+    </script>
+    <script type="module" src="js/supabaseClient.js"></script>
+    <script type="module" src="js/auth.js"></script>
+  </body>
+</html>
