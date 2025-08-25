@@ -1,0 +1,584 @@
+/**
+ * ========================================
+ * File: style-1.css
+ * Tema: Gaya untuk halaman Login & Daftar dengan Soft UI
+ * Proyek: Virnophas Official
+ * ========================================
+ */
+
+/* =======================================
+   ========== Variabel Global & Base ==========
+   ======================================= */
+:root {
+    /* Variabel warna global untuk tema terang (Soft UI) */
+    --vir-bg: #f0f4f8; 
+    --vir-text: #2a3038;
+    --vir-accent: #6c63ff;
+    --vir-card-bg: rgba(255, 255, 255, 0.9);
+    --vir-link: #5c6ac4;
+    --vir-primary: #6c63ff;
+    --vir-secondary: #00bcd4;
+    --vir-border-color: #e0e6ed;
+    --vir-shadow-light: rgba(0, 0, 0, 0.2); 
+    --vir-shadow-dark: rgba(0, 0, 0, 0.4);   
+}
+
+/* Variabel warna untuk tema gelap */
+[vir-theme="dark"] {
+    --vir-bg: #1a1e26;
+    --vir-text: #e0e6ed;
+    --vir-accent: #6c63ff;
+    --vir-card-bg: rgba(45, 52, 64, 0.8);
+    --vir-link: #a7a2ff;
+    --vir-primary: #6c63ff;
+    --vir-secondary: #00bcd4;
+    --vir-border-color: #3f4757;
+    --vir-shadow-light: rgba(0, 0, 0, 0.2); 
+    --vir-shadow-dark: rgba(0, 0, 0, 0.4); 
+}
+
+/* Mengatur body dan halaman utama agar terpusat */
+.vir-login-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 2rem 1rem;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    background: var(--vir-bg);
+    color: var(--vir-text);
+    transition: background 0.5s ease, color 0.5s ease;
+}
+
+/* Container utama */
+.vir-auth-container {
+    position: relative;
+    width: 100%;
+    max-width: 450px;
+    animation: fadeIn 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.vir-auth-card {
+    background-color: var(--vir-card-bg);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    box-shadow: 0 12px 24px var(--vir-shadow-light);
+    padding: 2.5rem;
+    border: 1px solid var(--vir-border-color);
+    position: relative;
+}
+
+.vir-auth-title {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 2.25rem;
+    font-weight: 700;
+    margin: 0 0 0.5rem;
+    text-align: center;
+}
+
+.vir-form-instruction {
+    font-size: 0.9rem;
+    text-align: center;
+    color: var(--vir-text);
+    margin: 0 0 1rem;
+    opacity: 0.8;
+}
+
+.vir-tab-switcher-wrapper {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    background-color: var(--vir-border-color);
+    border-radius: 50px;
+    padding: 0.25rem;
+}
+
+.vir-tab-btn {
+    flex-grow: 1;
+    background: none;
+    border: none;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--vir-text);
+    cursor: pointer;
+    padding: 0.75rem 0;
+    position: relative;
+    border-radius: 50px;
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.vir-tab-btn.active {
+    background-color: var(--vir-primary);
+    color: white;
+    box-shadow: 0 4px 10px var(--vir-shadow-light);
+}
+
+.vir-form-container {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    top: 14.5rem;
+    left: 2.5rem;
+    right: 2.5rem;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    transform: translateY(20px);
+    z-index: 1;
+}
+
+.vir-form-container.active {
+    opacity: 1;
+    visibility: visible;
+    position: relative;
+    top: auto;
+    left: auto;
+    right: auto;
+    transform: translateY(0);
+}
+
+.vir-form-group {
+    position: relative;
+}
+
+.vir-form-group label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--vir-text);
+    margin-bottom: 0.5rem;
+}
+
+.vir-input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.vir-input {
+    flex-grow: 1;
+    width: 100%;
+    padding: 0.8rem 1.25rem 0.8rem 3rem;
+    background-color: var(--vir-card-bg);
+    border: 2px solid var(--vir-border-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    color: var(--vir-text);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    outline: none;
+}
+
+.vir-input::placeholder {
+    color: var(--vir-text);
+    opacity: 0.6;
+}
+
+.vir-input:focus {
+    border-color: var(--vir-primary);
+    box-shadow: 0 0 0 3px rgba(108, 99, 255, 0.2);
+}
+
+.vir-input.valid {
+    border-color: #4caf50;
+}
+.vir-input.error {
+    border-color: #f44336;
+}
+.vir-input.valid:focus {
+    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2);
+}
+.vir-input.error:focus {
+    box-shadow: 0 0 0 3px rgba(244, 67, 54, 0.2);
+}
+
+.vir-input-icon {
+    position: absolute;
+    left: 1rem;
+    width: 20px;
+    height: 20px;
+    stroke: var(--vir-text);
+    opacity: 0.7;
+    transition: stroke 0.3s ease;
+}
+
+.vir-input-wrapper:focus-within .vir-input-icon {
+    stroke: var(--vir-primary);
+}
+
+.vir-input-error-msg {
+    color: #f44336;
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+    display: none;
+}
+
+.vir-toggle-password {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+.vir-toggle-password i {
+    width: 20px;
+    height: 20px;
+    stroke: var(--vir-text);
+    opacity: 0.7;
+    transition: stroke 0.3s ease;
+}
+
+.vir-toggle-password:hover i {
+    stroke: var(--vir-primary);
+}
+
+/* === GAYA BARU UNTUK INDIKATOR KEKUATAN SANDI === */
+.vir-password-strength-bar {
+    height: 6px;
+    width: 100%;
+    background-color: var(--vir-border-color);
+    border-radius: 3px;
+    margin-top: 0.75rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.vir-password-strength-bar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    border-radius: 3px;
+    transition: width 0.3s ease-in-out, background-color 0.3s ease;
+}
+
+.vir-password-strength-bar.rendah::before {
+    width: 33%;
+    background-color: #ff4136; /* Merah */
+}
+
+.vir-password-strength-bar.sedang::before {
+    width: 66%;
+    background-color: #ff851b; /* Oranye */
+}
+
+.vir-password-strength-bar.kuat::before {
+    width: 100%;
+    background-color: #2ecc40; /* Hijau */
+}
+
+.vir-password-strength-text {
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-top: 0.5rem;
+    text-align: right;
+    transition: color 0.3s ease;
+}
+
+.vir-password-strength-text.rendah {
+    color: #ff4136;
+}
+
+.vir-password-strength-text.sedang {
+    color: #ff851b;
+}
+
+.vir-password-strength-text.kuat {
+    color: #2ecc40;
+}
+/* === AKHIR GAYA BARU === */
+
+.vir-password-requirements {
+    font-size: 0.85rem;
+    color: var(--vir-text);
+    margin-top: 1rem;
+}
+
+.vir-password-requirements ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.vir-password-requirements li {
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.vir-password-requirements li::before {
+    content: '\2715';
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #f44336;
+    transition: color 0.3s ease;
+}
+
+.vir-password-requirements li.valid {
+    opacity: 1;
+}
+
+.vir-password-requirements li.valid::before {
+    content: '\2713';
+    color: #4caf50;
+}
+
+
+.vir-form-check {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: 1rem;
+}
+.vir-form-check label {
+    margin: 0;
+}
+.vir-form-check a {
+    color: var(--vir-link);
+    text-decoration: none;
+    font-weight: 600;
+}
+.vir-form-check a:hover {
+    text-decoration: underline;
+}
+
+.vir-btn-submit {
+    width: 100%;
+    padding: 0.9rem;
+    background-color: var(--vir-primary);
+    color: white;
+    font-size: 1rem;
+    font-weight: 700;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 10px var(--vir-shadow-light);
+    margin-top: 1.5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.vir-btn-submit:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px var(--vir-shadow-dark);
+}
+
+.vir-btn-submit:disabled {
+    background-color: var(--vir-border-color);
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+}
+
+.vir-theme-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: var(--vir-card-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--vir-border-color);
+    border-radius: 50%;
+    padding: 0.5rem;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+    z-index: 10;
+}
+
+.vir-theme-toggle:hover {
+    transform: scale(1.1);
+}
+
+.vir-theme-toggle i {
+    stroke: var(--vir-text) !important;
+}
+
+.vir-message-box {
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+    text-align: center;
+    font-weight: 600;
+    display: none;
+}
+
+.vir-message-box.error {
+    background-color: #ffe0e0;
+    color: #d32f2f;
+}
+
+.vir-message-box.success {
+    background-color: #e8f5e9;
+    color: #388e3c;
+}
+
+/* Tambahan: Gaya untuk pesan sukses besar */
+.vir-success-message-box {
+    background: none;
+    border: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    text-align: center;
+}
+
+.vir-success-message-box .vir-icon-success {
+    width: 64px;
+    height: 64px;
+    color: #4caf50;
+    animation: bounceIn 0.8s ease-out;
+}
+
+.vir-success-message-box .vir-message-text {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--vir-text);
+}
+
+.vir-success-message-box .vir-message-small {
+    font-size: 0.9rem;
+    color: var(--vir-text);
+    opacity: 0.7;
+}
+
+@keyframes bounceIn {
+    0% { transform: scale(0.3); opacity: 0; }
+    50% { transform: scale(1.1); opacity: 1; }
+    80% { transform: scale(0.9); }
+    100% { transform: scale(1); }
+}
+
+/* === PERBAIKAN POP UP TOAST KE POJOK KANAN ATAS === */
+.vir-toast {
+    position: fixed;
+    top: 20px; /* Pindahkan ke atas */
+    right: 20px; /* Posisikan di kanan */
+    left: auto; /* Nonaktifkan properti kiri */
+    transform: translateX(0); /* Nonaktifkan transformasi horizontal */
+    min-width: 300px;
+    padding: 1rem 1.5rem;
+    background-color: var(--vir-card-bg);
+    color: var(--vir-text);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--vir-border-color);
+    text-align: center;
+    font-weight: 600;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    z-index: 1000;
+}
+
+.vir-toast.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0); /* Sesuaikan animasi masuk */
+}
+
+/* === AKHIR PERBAIKAN TOAST === */
+
+.vir-toast.success {
+    border-left: 5px solid #4caf50;
+}
+
+.vir-toast.error {
+    border-left: 5px solid #f44336;
+}
+
+.vir-loader {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 2px solid rgba(255,255,255,.3);
+    border-radius: 50%;
+    border-top-color: #fff;
+    animation: spin 1s ease-in-out infinite;
+    -webkit-animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to { -webkit-transform: rotate(360deg); }
+}
+@-webkit-keyframes spin {
+    to { -webkit-transform: rotate(360deg); }
+}
+
+/* =======================================
+   ========== Media Query untuk Responsif ==========
+   ======================================= */
+@media (max-width: 600px) {
+    .vir-login-page {
+        padding: 1rem;
+        align-items: flex-start;
+    }
+    .vir-auth-container {
+        padding: 0 1rem;
+    }
+    .vir-auth-card {
+        padding: 1.5rem;
+    }
+    .vir-auth-title {
+        font-size: 1.8rem;
+    }
+    .vir-tab-btn {
+        font-size: 1rem;
+    }
+    .vir-tab-switcher-wrapper {
+        gap: 1rem;
+    }
+    .vir-input {
+        padding: 0.7rem 1rem 0.7rem 2.5rem;
+    }
+    .vir-input-icon {
+        left: 0.8rem;
+    }
+    .vir-toggle-password {
+        right: 10px;
+    }
+    .vir-input-error-msg {
+        word-wrap: break-word;
+        white-space: normal;
+    }
+    .vir-toast {
+        /* Kembali ke bawah tengah di layar kecil */
+        top: auto;
+        bottom: 20px;
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%);
+        min-width: unset;
+        max-width: 90%;
+    }
+    .vir-toast.show {
+        transform: translateX(-50%) translateY(0);
+    }
+    .vir-form-container {
+        left: unset;
+        right: unset;
+    }
+}
+
