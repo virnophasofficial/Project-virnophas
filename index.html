@@ -18,12 +18,30 @@
   </head>
   <body>
 
-<!-- ========== HEADER / NAVBAR ========== --!>
+<!-- ========== HEADER / NAVBAR ========== -->
 <header class="vir-navbar">
   <div class="vir-nav-left">
     <h1 class="vir-judul">Virnophas Official</h1>
   </div>
   <div class="vir-nav-actions">
+<button id="vir-notification-bell" class="vir-icon-btn" aria-label="Notifikasi">
+    <i data-lucide="bell" class="vir-icon"></i>
+    <span id="vir-notification-badge" class="vir-notification-badge"></span>
+</button>
+
+<div id="vir-notification-dropdown" class="vir-notification-dropdown">
+    <div class="vir-notification-header">
+        <h4 class="vir-dropdown-title">Pemberitahuan</h4>
+    </div>
+    <div id="vir-notification-list" class="vir-notification-list">
+        <p class="vir-placeholder-text">Tidak ada notifikasi baru.</p>
+    </div>
+    <div class="vir-notification-footer">
+        <a href="#" id="vir-dropdown-footer" class="vir-dropdown-footer">Lihat Semua</a>
+    </div>
+</div>
+
+
     <button id="vir-toggle-theme" aria-label="Toggle Theme">
       <i id="vir-theme-icon" data-lucide="sun"></i>
     </button>
@@ -34,74 +52,106 @@
   </div>
 </header>
 
+<!-- ========== SIDEBAR ========== -->
 <nav id="vir-sidebar" class="vir-sidebar" aria-label="Navigasi Sidebar">
     <div class="sidebar-header">
-        <button id="vir-close-sidebar" aria-label="Tutup Sidebar" class="close-btn">
-            <i id="vir-close-icon" data-lucide="x"></i>
-        </button>
-        
-        <div class="vir-profil-avatar">
-            <img src="assets/images/profil.jpg" alt="Avatar">
+        <div class="vir-header-controls">
+            <button id="vir-profile-btn" aria-label="Buka Profil" class="vir-icon-btn">
+                <i id="vir-profile-icon" data-lucide="user"></i>
+            </button>
+            <button id="vir-close-sidebar" aria-label="Tutup Sidebar" class="vir-icon-btn">
+                <i id="vir-close-icon" data-lucide="x"></i>
+            </button>
         </div>
-        
-        <h3>Virnophas Official</h3>
-        
-        <p class="profile-description">
-    <span class="short-text">Solusi optimalisasi game...</span>
-    <span class="full-text">Solusi optimalisasi performa game PUBG Mobile yang aman, gratis, dan terpercaya untuk semua perangkat.</span>
-</p>
-    <button class="toggle-description-btn" aria-expanded="false">
-        <i data-lucide="chevron-down"></i>
-    </button>
-</p>
-
-
-        <div class="vir-social-icons">
-    <a href="https://youtube.com/@virnophasgaming?si=h4MNpgg7EzVhf-QV" class="youtube"><i data-lucide="youtube"></i></a>
-    <a href="https://t.me/VirnophasOriginal" class="boxes"><i data-lucide="boxes"></i></a>
-    <a href="https://saweria.co/Virnophas" class="hand-coins"><i data-lucide="hand-coins"></i></a>
-</div>
-
     </div>
     
     <ul class="vir-sidebar-menu">
-        <li><a href="index.html"><i data-lucide="home"></i> <span>Beranda</span></a></li>
-        <li><a href="index.html"><i data-lucide="file-text"></i> <span>Belum Ada</span></a></li>
-        <li><a href="#"><i data-lucide="info"></i> <span>Belum Ada</span></a></li>
-        <li><a href="index.html"><i data-lucide="contact"></i> <span>Belum Ada</span></a></li>
-    </ul>
-    <!-- ========== FOOTER & JAM, TANGGAL SIDEBAR MENU ========== -->
-<div class="vir-sidebar-footer">
-    <div class="vir-datetime-container">
-        <div id="vir-time"></div>
-        <div id="vir-date"></div>
+    <li><a href="index.html"><i data-lucide="home"></i> <span>Beranda</span></a></li>
+    <li><a href="index.html#tim-kami"><i data-lucide="users"></i> <span>Tim Kami</span></a></li>
+        <li><a href="index.html#legal"><i data-lucide="gavel"></i> <span>Legal</span></a></li>
+    <li><a href="index.html#faq"><i data-lucide="help-circle"></i> <span>FAQ</span></a></li>
+    <li><a href="index.html#testimoni"><i data-lucide="message-square-quote"></i> <span>Testimoni</span></a></li>
+</ul>
+
+
+
+    <div class="vir-social-icons">
+        <a href="https://youtube.com/@virnophasgaming?si=h4MNpgg7EzVhf-QV" class="youtube"><i data-lucide="youtube"></i></a>
+        <a href="https://t.me/VirnophasOriginal" class="boxes"><i data-lucide="boxes"></i></a>
+        <a href="https://saweria.co/Virnophas" class="hand-coins"><i data-lucide="hand-coins"></i></a>
+    </div>
+
+    <div class="vir-sidebar-footer">
+        <div class="vir-datetime-container">
+            <div id="vir-time"></div>
+            <div id="vir-date"></div>
+        </div>
+    </div>
+</nav>
+
+<!-- ========== PROFILE POP UP ========== -->
+<div id="vir-jendela-profil" class="vir-lapis-modal">
+    <div class="vir-isi-modal vir-kartu-timbul">
+        <div class="vir-kepala-modal">
+            <h3 id="vir-judul-modal">Profil Pengguna</h3>
+            <button id="vir-tombol-tutup" aria-label="Tutup Modal" class="vir-tombol-ikon">
+                <i data-lucide="x"></i>
+            </button>
+        </div>
+        
+        <div id="vir-tamu-profil" class="vir-kartu-profil">
+            <img src="assets/images/profil.jpg" alt="Virnophas Official Avatar" class="vir-foto-profil">
+            <h4 class="vir-nama-profil">Virnophas Official</h4>
+            <p class="vir-keterangan-profil">
+              Website Dan Channel resmi yang menyediakan konfigurasi (config) untuk mengoptimalkan performa PUBG Mobile. Kami berkomitmen menyediakan solusi legal dan aman untuk mengatasi masalah lag, FPS drop, dan kendala teknis lainnya. Semua konten kami dirancang untuk meningkatkan pengalaman bermain tanpa melanggar peraturan permainan.
+            </p> <p class="vir-status-profil">Anda belum login.</p>
+            <div class="vir-ikon-sosial-modal">
+                <a href="#" aria-label="Facebook"><i data-lucide="facebook"></i></a>
+                <a href="https://x.com/Cargeiros" aria-label="Twitter"><i data-lucide="twitter"></i></a>
+                <a href="https://t.me/AerithMeridithasBOT" aria-label="handshake"><i data-lucide="handshake"></i></a>
+                <a href="https://www.youtube.com/@VirnophasX" aria-label="YouTube"><i data-lucide="youtube"></i></a>
+            </div> <div class="vir-aksi-modal">
+                <a href="login-signup.html" class="vir-tombol-masuk">Login</a>
+                <a href="login-signup.html" class="vir-tombol-daftar">Daftar</a>
+            </div>
+        </div>
+        
+        <div id="vir-pengguna-profil" class="vir-kartu-profil" style="display: none;">
+            <img id="vir-avatar-pengguna" src="assets/images/user-default.jpg" alt="User Avatar" class="vir-foto-profil">
+            <h4 id="vir-nama-pengguna" class="vir-nama-profil">Nama Pengguna</h4>
+            <p id="vir-email-pengguna" class="vir-status-profil">email@example.com</p>
+            <div class="vir-aksi-modal">
+                <button id="vir-tombol-keluar" class="vir-tombol-keluar">Logout</button>
+            </div>
+        </div>
     </div>
 </div>
 
 
 
-</nav>
 
-<!-- ========== HERO LANDING PAGE ========== --!>
+
+<!-- ========== HERO LANDING PAGE ========== -->
 <section class="vir-hero-landing-page">
     <img src="assets/images/background-hero.jpg" alt="Background Virnophas Official" class="vir-hero-background-image">
     <div class="vir-hero-landing-content vir-neumorphism-card">
         <h2 class="vir-hero-welcome">Selamat Datang di Virnophas Official</h2>
-        <p class="vir-hero-deskripsi-singkat">
-    Dapatkan pengalaman bermain PUBG Mobile yang lebih lancar dan stabil. Kami menyediakan konfigurasi (config) aman dan gratis untuk mengatasi lag, drop FPS, dan masalah performa di perangkat Anda.
+        <p class="vir-hero-deskripsi-singkat"> Solusi terbaik untuk gameplay PUBG Mobile yang lebih lancar dan stabil. Dapatkan config anti-lag buatan kami yang 100% aman dan gratis. <br>Dapatkan pengalaman bermain PUBG Mobile yang lebih lancar dan stabil. Kami menyediakan konfigurasi (config) aman dan gratis untuk mengatasi lag, drop FPS, dan masalah performa di perangkat Anda.</br>
 </p>
         <div class="vir-hero-buttons">
-            <a href="https://t.me/VirnophasOriginal" class="vir-btn-utama vir-btn-telegram">Gabung di Telegram</a>
-            <a href="assets/images/coming-soon.jpeg" class="vir-btn-utama vir-btn-download">Halaman Download</a>
-        </div>
+    <a href="https://t.me/VirnophasOriginal" class="vir-btn-hero vir-btn-telegram">Gabung di Telegram</a>
+    <a href="http://localhost:8158/primary:Virnophas%20Official/login-signup.html" class="vir-btn-hero vir-btn-download">Halaman Download</a>
+</div>
+
     </div>
 </section>
 
 <!-- ========== TIM KAMI ========== -->
-<section class="vir-kartu-tim">
+<section class="vir-kartu-tim" id="tim-kami">
+
     <div class="vir-container">
         <h2 class="vir-team-title-2">Tim Pengembang Kami</h2><p class="vir-team-slogan-2">
-    Tim yang mewujudkan visi dan misi kami.
+    Tim pengembang yang mewujudkan visi dan misi kami melalui platform digital ini.
 </p>
 
         <div class="vir-team-grid-2">
@@ -111,7 +161,7 @@
                 <h3 class="vir-profile-name">Malgath Cargeiros</h3>
 <p class="vir-profile-role">Founder & Lead Developer</p>
 <p class="vir-profile-description">
-Malgath adalah otak di balik setiap config yang dibagikan. Berbekal pengalaman pribadi dan eksperimen, ia memimpin Virnophas Official dengan prinsip transparansi dan profesionalisme, memastikan setiap konten yang dirilis aman, orisinal, dan etis.
+Sebagai Founder dan Lead Developer, Malgath Cargeiros adalah sosok di balik setiap config yang kami buat. Berangkat dari pengalaman pribadinya, ia memimpin Virnophas Official dengan komitmen pada transparansi dan etika. Visinya sederhana: memastikan setiap pemain bisa menikmati pengalaman PUBG Mobile yang lancar, dengan konten yang selalu aman dan berkualitas.
 </p>
                 <div class="vir-profile-social-links">
                     <a href="https://m.facebook.com/61578259913695/" class="vir-social-icon">
@@ -130,9 +180,9 @@ Malgath adalah otak di balik setiap config yang dibagikan. Berbekal pengalaman p
             <div class="vir-team-profile-card">
                 <img src="assets/images/photo-web-developer.jpg" alt="Foto Profil Fikri Muharrikul Ihsan" class="vir-profile-photo">
                 <h3 class="vir-profile-name">Fikri Muharrikul Ihsan</h3>
-<p class="vir-profile-role">Web Developer</p>
+<p class="vir-profile-role">Digital Architect & Developer</p>
 <p class="vir-profile-description">
-Bertanggung jawab atas arsitektur digital Virnophas Official, Fikri memastikan website ini tidak hanya modern dan responsif, tetapi juga optimal dari sisi performa dan pengalaman pengguna. Ia adalah orang di balik kode yang membuat visi kami menjadi kenyataan yang fungsional.
+Fikri Muharrikul Ihsan adalah arsitek tunggal yang bertanggung jawab penuh atas pembangunan platform ini. Dari konsep hingga kode, ia merancang dan mengimplementasikan setiap elemen website dengan pendekatan yang intuitif, memastikan Virnophas Official tidak hanya modern dan responsif, tetapi juga mencerminkan visi orisinal kami tanpa kompromi.
 </p>
                 <div class="vir-profile-social-links">
                     <a href="https://m.facebook.com/Fikri12091999/" class="vir-social-icon">
@@ -159,30 +209,65 @@ Bertanggung jawab atas arsitektur digital Virnophas Official, Fikri memastikan w
     </div>
 </section>
 
-<!-- ========== IKLAN ========== -->
-<section class="vir-sponsor-section">
+<!-- 
+    =======================================
+    ===== BAGIAN IKLAN GAYA ADSENSE BARU =====
+    ======================================= 
+-->
+<section class="vir-adsense-section">
     <div class="vir-container">
-        <h2 class="vir-sponsor-title">Didukung oleh Sponsor</h2>
-        <div class="vir-sponsor-marquee">
-            <div class="vir-marquee-content">
-                <img src="assets/images/logo.png" alt="Sponsor Logo 1" class="vir-sponsor-logo">
-                <img src="assets/images/logo-1.png" alt="Sponsor Logo 2" class="vir-sponsor-logo">
-                <img src="https://logoipsum.com/artwork/386" alt="Sponsor Logo 3" class="vir-sponsor-logo">
-                <img src="https://logoipsum.com/artwork/385" alt="Sponsor Logo 4" class="vir-sponsor-logo">
-                <img src="https://cdn.discordapp.com/attachments/1118181655848800266/1209307779768375326/image.png?ex=65e5b306&is=65d33e06&hm=f3b1456a000632598380e227a69edb6b8032c1b18147d341935e40e24177d704&" alt="Sponsor Logo 5" class="vir-sponsor-logo">
-                <img src="https://cdn.discordapp.com/attachments/1118181655848800266/1209307779768375326/image.png?ex=65e5b306&is=65d33e06&hm=f3b1456a000632598380e227a69edb6b8032c1b18147d341935e40e24177d704&" alt="Sponsor Logo 6" class="vir-sponsor-logo">
-                <img src="https://cdn.discordapp.com/attachments/1118181655848800266/1209307779768375326/image.png?ex=65e5b306&is=65d33e06&hm=f3b1456a000632598380e227a69edb6b8032c1b18147d341935e40e24177d704&" alt="Sponsor Logo 1" class="vir-sponsor-logo">
-                <img src="https://cdn.discordapp.com/attachments/1118181655848800266/1209307779768375326/image.png?ex=65e5b306&is=65d33e06&hm=f3b1456a000632598380e227a69edb6b8032c1b18147d341935e40e24177d704&" alt="Sponsor Logo 2" class="vir-sponsor-logo">
-                <img src="https://cdn.discordapp.com/attachments/1118181655848800266/1209307779768375326/image.png?ex=65e5b306&is=65d33e06&hm=f3b1456a000632598380e227a69edb6b8032c1b18147d341935e40e24177d704&" alt="Sponsor Logo 3" class="vir-sponsor-logo">
-                <img src="https://cdn.discordapp.com/attachments/1118181655848800266/1209307779768375326/image.png?ex=65e5b306&is=65d33e06&hm=f3b1456a000632598380e227a69edb6b8032c1b18147d341935e40e24177d704&" alt="Sponsor Logo 4" class="vir-sponsor-logo">
+        <h2 class="vir-adsense-title">Beriklan Bersama Kami</h2>
+        <div class="vir-adsense-grid">
+            <!-- IKLAN UTAMA (HERO AD) -->
+            <div class="vir-adsense-card hero-ad" vir-iklanpertama>
+                <div class="vir-adsense-header">
+                    <span class="vir-adsense-label">Iklan Utama</span>
+                    <a href="#" class="vir-adsense-more"><i data-lucide="info"></i></a>
+                </div>
+                <div class="vir-adsense-content">
+                    <h3 class="vir-adsense-promo-title">Jangkau Ribuan Gamer Mobile yang Sangat Tertarget!</h3>
+                    <p class="vir-adsense-promo-text">Virnophas Official adalah platform terpercaya yang diakses oleh komunitas aktif pemain PUBG Mobile. Jadikan website kami sebagai media efektif untuk mempromosikan produk, layanan, atau brand Anda langsung kepada audiens yang peduli pada performa game dan teknologi mobile.!</p>
+                </div>
+                <a href="#" class="vir-adsense-btn hero-btn">Beriklan Sekarang</a>
+            </div>
+
+            <!-- IKLAN KEDUA -->
+            <div class="vir-adsense-card">
+                <div class="vir-adsense-header">
+                    <span class="vir-adsense-label">Iklan</span>
+                    <a href="#" class="vir-adsense-more"><i data-lucide="info"></i></a>
+                </div>
+                <img src="https://placehold.co/400x200/6366f1/ffffff?text=Promo+Spesial" alt="Iklan 2" class="vir-adsense-image">
+                <div class="vir-adsense-content">
+                    <h3 class="vir-adsense-promo-title">Beriklan atau Berkolaborasi dengan Kami</h3>
+                    <p class="vir-adsense-promo-text">Kami mengundang Anda untuk berkolaborasi dan tumbuh bersama komunitas Virnophas Official. Sebagai sumber solusi performa game, platform kami adalah tempat ideal untuk memperkenalkan brand Anda kepada audiens yang setia dan relevan. Mari diskusikan bagaimana kita bisa menciptakan kemitraan yang saling menguntungkan.</p>
+                </div>
+                <a href="#" class="vir-adsense-btn">Unduh Sekarang</a>
+            </div>
+            
+            <!-- IKLAN KETIGA (TANPA GAMBAR) -->
+            <div class="vir-adsense-card text-only-ad">
+                <div class="vir-adsense-header">
+                    <span class="vir-adsense-label">Iklan Teks</span>
+                    <a href="#" class="vir-adsense-more"><i data-lucide="info"></i></a>
+                </div>
+                <div class="vir-adsense-content">
+                    <h3 class="vir-adsense-promo-title">Ingin Terhubung dengan Komunitas Gamer yang Solid?</h3>
+                    <p class="vir-adsense-promo-text">Kami menawarkan peluang promosi dan kemitraan untuk menjangkau audiens Virnophas Official yang setia dan tertarget.</p>
+                </div>
+                <a href="#" class="vir-adsense-btn">Jalin Kemitraan dengan Kami</a>
             </div>
         </div>
     </div>
 </section>
 
 
+
+
+
 <!-- ========== LEGAL INFORMASI ========== -->
-<section class="vir-legal-section">
+<section class="vir-legal-section" id="legal">
+
     <div class="vir-container">
 <div class="vir-legal-main-card">
     <h2 class="vir-legal-main-title">Ketentuan & Kebijakan Resmi</h2>
@@ -472,6 +557,131 @@ Bertanggung jawab atas arsitektur digital Virnophas Official, Fikri memastikan w
 
 </section>
 
+<!--FAQ ACCORDION-->
+<section class="vir-faq-section" id="faq">
+    <div class="vir-faq-container">
+        <h2 class="vir-faq-main-title">Pertanyaan yang Sering Diajukan</h2>
+        <p class="vir-faq-subtitle">Kami telah merangkum jawaban untuk pertanyaan umum yang mungkin Anda miliki. Dapatkan solusi di sini.</p>
+        
+        <div class="vir-faq-accordion">
+            
+            <div class="vir-faq-item">
+                <button class="vir-faq-question">
+                    <span class="vir-faq-question-text">Apa Itu File Config?</span>
+                    <span class="vir-faq-icon">+</span>
+                </button>
+                <div class="vir-faq-answer">
+                    <p>File config adalah berkas konfigurasi yang berfungsi untuk mengubah pengaturan visual dan performa di sisi klien<i> (perangkat Anda)</i>. Tujuannya adalah untuk mengoptimalkan gim agar berjalan lebih ringan, lancar, dan stabil, terutama pada perangkat dengan spesifikasi terbatas.</p>
+                </div>
+            </div>
+
+            <div class="vir-faq-item">
+                <button class="vir-faq-question">
+                    <span class="vir-faq-question-text">Apakah Menggunakan Config Aman? Apakah Bisa Menyebabkan Banned?</span>
+                    <span class="vir-faq-icon">+</span>
+                </button>
+                <div class="vir-faq-answer">
+                    <p>Ya. Semua file config yang kami sediakan terjamin <b>aman</b> dan <b>legal</b>. Kami berfokus pada <b>optimasi client-side </b>yang hanya memodifikasi pengaturan grafis dan performa, tanpa menyentuh file inti yang terkait dengan <i>gameplay</i> atau server. Karena itu, penggunaan config tidak terdeteksi sebagai pelanggaran dan tidak akan menyebabkan <b>banned</b>. Kami tegaskan kembali bahwa kami tidak menyediakan <i>cheat</i> atau <i>mod ilegal.</i></p>
+                </div>
+            </div>
+
+            <div class="vir-faq-item">
+                <button class="vir-faq-question">
+                    <span class="vir-faq-question-text">Bagaimana Cara Memasang File Config?</span>
+                    <span class="vir-faq-icon">+</span>
+                </button>
+                <div class="vir-faq-answer">
+                    <p>Setiap file dilengkapi dengan panduan instalasi. Anda hanya perlu mengikuti langkah-langkah yang kami sediakan. Kami sangat menyarankan Anda untuk selalu membaca panduan dengan teliti sebelum memulai.</p>
+                </div>
+            </div>
+<div class="vir-faq-item">
+                <button class="vir-faq-question">
+                    <span class="vir-faq-question-text">Mengapa Config Tidak Berfungsi di Perangkat Saya?</span>
+                    <span class="vir-faq-icon">+</span>
+                </button>
+                <div class="vir-faq-answer">
+                    <p>Hasil dapat bervariasi tergantung pada <b><i>spesifikasi perangkat dan cara instalasi</i></b>. Faktor-faktor seperti <b><i><u>kesalahan pemasangan, langkah yang terlewat, atau bug pada sistem penyimpanan aplikasi</u></i></b> dapat menjadi penyebabnya. Jika config tidak berfungsi, Anda bisa mencoba instalasi ulang atau menunggu pembaruan dari kami.</p>
+                </div>
+            </div>
+<div class="vir-faq-item">
+                <button class="vir-faq-question">
+                    <span class="vir-faq-question-text">Apakah Config Bekerja Untuk Semua Versi PUBG Mobile?</span>
+                    <span class="vir-faq-icon">+</span>
+                </button>
+                <div class="vir-faq-answer">
+                    <p><strong>Tidak</strong>. Setiap config dibuat dan dioptimalkan untuk versi gim PUBG Mobile tertentu. Kami akan selalu mencantumkan versi gim yang didukung. Pastikan Anda menggunakan config yang sesuai dengan versi gim yang terpasang di perangkat Anda, karena tidak semua versi kompatibel.</p>
+                </div>
+            </div>
+            
+            <div class="vir-faq-item">
+                <button class="vir-faq-question">
+                    <span class="vir-faq-question-text">Bagaimana Saya Bisa Mendukung Virnophas Official?</span>
+                    <span class="vir-faq-icon">+</span>
+                </button>
+                <div class="vir-faq-answer">
+                    <p>Layanan kami gratis untuk semua orang. Anda bisa mendukung kami dengan mengunjungi tautan shortlink yang kami sediakan, atau dengan memberikan donasi sukarela melalui halaman donasi resmi kami. Dukungan Anda sangat berarti bagi kami untuk terus menyediakan konten terbaik.</p>
+                </div>
+            </div>
+            
+            <div class="vir-faq-item">
+                <button class="vir-faq-question">
+                    <span class="vir-faq-question-text">Apakah Ada Grup Diskusi?</span>
+                    <span class="vir-faq-icon">+</span>
+                </button>
+                <div class="vir-faq-answer">
+                    <p>Ya, untuk saat ini kami memiliki grup diskusi resmi di Telegram: <a href="https://t.me/ZoneLabDiscussion"><b>ZoneLab Drop</b></a>.
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!--TESTIMONI-->
+<section class="vir-testimonial-section" id="testimoni">
+
+    <div class="vir-testimonial-container">
+        <h2 class="vir-testimonial-main-title">Apa Kata Mereka</h2>
+        <p class="vir-testimonial-subtitle">Lihat ulasan jujur dari pengguna kami.</p>
+
+        <div class="vir-testimonial-slider-wrapper">
+            <div class="vir-testimonial-slider">
+                <div class="vir-testimonial-card">
+                    <p class="vir-testimonial-text">"Pengalaman Anda sangat berarti bagi kami dan calon pengguna lainnya. Jika Anda puas dengan layanan kami, bagikan kisah Anda dan bantu kami menunjukkan manfaatnya. Kirimkan testimoni, foto, atau tangkapan layar Anda ke bot Telegram kami: @AerithMeridithasBOT."</p>
+                    <div class="vir-testimonial-author">
+                        <span class="vir-author-name">Jadilah Testimoni Pertama Kami!</span>
+                        <span class="vir-author-role">Pemain Profesional</span>
+                    </div>
+                </div>
+                <div class="vir-testimonial-card">
+                    <p class="vir-testimonial-text">"Sudah merasakan manfaatnya? Jadilah inspirasi bagi komunitas kami!
+Kirim testimoni Anda (beserta foto/deskripsi) melalui bot @AerithMeridithasBOT."</p>
+                    <div class="vir-testimonial-author">
+                        <span class="vir-author-name">Bagikan Kisah Sukses Anda</span>
+                        <span class="vir-author-role">YouTuber Gaming</span>
+                    </div>
+                </div>
+                <div class="vir-testimonial-card">
+                    <p class="vir-testimonial-text">"Anda bisa menjadi yang pertama. Kirim testimoni Anda ke bot Telegram @AerithMeridithasBOT."</p>
+                    <div class="vir-testimonial-author">
+                        <span class="vir-author-name">Belum Ada Testimoni.</span>
+                        <span class="vir-author-role">Streamer</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="vir-testimonial-nav">
+            <button class="vir-slider-prev">‹</button>
+            <div class="vir-slider-dots">
+                <span class="vir-dot active"></span>
+                <span class="vir-dot"></span>
+                <span class="vir-dot"></span>
+            </div>
+            <button class="vir-slider-next">›</button>
+        </div>
+    </div>
+</section>
 
 
 
@@ -490,7 +700,7 @@ Bertanggung jawab atas arsitektur digital Virnophas Official, Fikri memastikan w
 <footer class="vir-footer">
   <span>Dibuat oleh</span>
   <i data-lucide="heart"></i>
-  <a href="#" class="footer-link">Virnophas Official</a>
+  <a href="https://t.me/VirnophasOriginal" class="footer-link">Virnophas Official</a>
   <span>— 2025</span>
 </footer>
 
@@ -505,6 +715,10 @@ Bertanggung jawab atas arsitektur digital Virnophas Official, Fikri memastikan w
 
 <!-- ========== SCRIPT UTAMA UNTUK TEMA & MENU ========== -->
 <script src="js/script.js"></script>
+
+<script type="module" src="js/supabaseClient.js"></script>
+<script type="module" src="js/auth.js"></script>
+
 
 <script>
     lucide.createIcons();
